@@ -1,0 +1,531 @@
+/*---------------------
+        System 
+---------------------*/
+h1 {
+  font-size: 36px;
+}
+.title-box {
+  text-align: center;
+  color: white;
+  background: linear-gradient(to bottom, rgb(255, 50, 200), rgb(230, 50, 100));
+  padding-top: 0.5em;
+  padding-bottom: 3em;
+  border-radius: 25px;
+  margin-bottom: 1em;
+} 
+.contents-box {
+  background: linear-gradient(to bottom,white,rgb(255, 225, 255));
+  border-radius: 25px;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.contents {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.contents > div > a {
+  text-decoration: none;
+  color:rgb(255, 50, 200);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.contents > div > a:hover {
+  color: rgb(150, 0, 70);
+  font-weight: bold; 
+  font-size: large;
+}
+.column {
+  column-count:2;
+  column-gap: 1em;
+}
+/*---------------------
+        System 
+---------------------*/
+
+/*------- reddy block -------*/
+.red-block {
+  overflow-y: auto;
+  background: linear-gradient(to bottom, rgb(255, 50, 200), rgb(230, 50, 100));
+  padding: 1em;
+  border-radius: 25px;
+  color: white;
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+.red-block::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.red-block::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+.red-block:hover {
+  transform: scale(1.01);
+  box-shadow: 10px 10px 10px rgb(150, 0, 70, 0.5);
+}
+/*------- reddy block -------*/
+
+/*------- whitey block -------*/
+.white-block {
+  overflow-y: auto;
+  background: linear-gradient(to bottom,white,rgb(255, 225, 255));
+  padding: 1em;
+  border-radius: 25px;
+  color: rgb(255, 50, 200);
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+.white-block::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.white-block::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgb(255, 50, 200), rgb(230, 50, 100));
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+.white-block:hover {
+  transform: scale(1.01);
+  box-shadow: 10px 10px 10px rgb(220, 150, 180);
+}
+/*------- whitey block -------*/
+/*---------------------
+        Table 
+---------------------*/
+
+.table {
+  display: grid;
+  gap: 10px;
+}
+.table > div{
+  padding: 1em;
+}
+.rb > div:not(:nth-last-child(-n+4)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbp > div:not(:nth-last-child(-n+4)) {
+  border-bottom: solid 1px rgb(255, 50, 200);
+  padding-bottom: 1em;
+}
+.rbnor > div:not(:nth-last-child(-n+3)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbpnor > div:not(:nth-last-child(-n+3)):not(.boco) {
+  border-bottom: solid 1px rgb(255, 50, 200);
+  padding-bottom: 1em;
+}
+.rbib > div:not(:nth-last-child(-n+2)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbibp > div:not(:nth-last-child(-n+2)) {
+  border-bottom: solid 1px rgb(255, 50, 200);
+  padding-bottom: 1em;
+}
+.table-ib {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 30em);
+}
+.table-ib > div {
+  padding: 1em;
+  display:grid; 
+  grid-template-columns: auto auto;
+}
+.table-ib > div:not(:nth-child(2n)) {
+  border-right: solid 1px white;
+}
+.table-ibp {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 30em);
+}
+.table-ibp > div {
+  padding: 1em;
+  display:grid; 
+  grid-template-columns: auto auto;
+}
+.table-ibp > div:not(:nth-child(2n)) {
+  border-right: solid 1px rgb(255, 50, 200);
+}
+.table-obfi > div:not(:nth-child(4n)) {
+  border-right: solid 1px rgb(255, 50, 200);
+}
+.table-obfi {
+  display:grid; 
+  grid-template-columns: 15em 15em 25em 25em;
+  grid-template-rows: repeat(2,auto);
+  gap: 2em;
+}
+.lihi > div:nth-child(3n):not(.exouts) {
+  line-height: 15px;
+}
+/*---------------------
+        Table 
+---------------------*/
+
+/* example button */
+.btn:hover {
+  background-color: blue;
+}
+.btn2:active {
+  outline: solid 3px yellow;
+  outline-offset: 2px;
+}
+.link:visited {
+  color: green;
+}
+.input-box:focus  {
+  outline: solid 3px red;
+  outline-offset: 2px;
+}
+.status :valid {
+  color: green;
+}
+.status :invalid {
+  color: red;
+}
+.checked-status input[type="checkbox"]:checked + span {
+  color: green;
+}
+.checked-status input[type="radio"]:checked + span {
+  color: green;
+}
+.indet-status input[type="checkbox"]:indeterminate + span {
+  color: green;
+}
+.indet-status input[type="radio"]:indeterminate + span {
+  color: green;
+}
+/* list */
+.list :first-child {color: yellow;}
+.list :last-child {color: blue;}
+.list :nth-child(4n) {color: lightgreen;}
+.with-link:has(a) {
+  background-color:yellow;
+}
+.without-link:not(:has(a)) {
+  background-color: yellow;
+}
+.text-one::before {
+  content: " * ";
+}
+.text-two::after {
+  content: " * ";
+}
+.plahol::placeholder {
+  color: blue;
+}
+.star-list li::marker {
+  content: " ★ ";
+}
+.sep-tab {
+  border-collapse: separate;
+  margin-bottom: 0.5em;
+}
+.sep-tab td, .sep-tab th {
+  border: 1px solid blue;
+}
+.col-tab {
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+}
+.col-tab td, .col-tab th {
+  border: 1px solid blue;
+}
+.inlblo {
+  border: 1px solid black;
+  width: 150px;
+}
+.inlblo > span {
+  background-color: coral;
+}
+.inlbloblo {
+  border: 1px solid black;
+  width: 150px;
+}
+.inlbloblo > span {
+  background-color: coral;
+  display: inline-block;
+}
+.overflow {
+  overflow:auto;
+  background: white;
+  padding: 1em;
+  width: 75%;
+  height: 5em; 
+}
+.scroll {
+  overflow: auto;
+  background-color: white;
+  padding: 1em;
+  width: 75%;
+  height: 5em;
+}
+.scroll::-webkit-scrollbar {
+  background: darkslategrey;
+  width: 10px;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background: cyan;
+}
+.imba {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6,auto);
+  grid-template-rows: repeat(2,auto);
+}
+.imba >div {
+  text-align: center;
+  margin-right: 1em;
+}
+.pattern1 {
+  background-image: url('bubble-pattern.png');
+  overflow: auto;
+  height: 275px;
+  width: 75%;
+  color: white;
+  padding: 1em;
+}
+.pattern2 {
+  background-image: url('bubble-pattern.png');
+  background-attachment: local;
+  overflow: auto;
+  height: 275px;
+  width: 75%;
+  color: white;
+  padding: 1em;
+}
+.whsq1 {
+  background-color: rgb(255,255,255,0.5);
+  padding: 1em;
+  border-radius: 25px;
+  width: 75%;
+  height: 75%;
+  filter:blur(3px);
+}
+.whsq2 {
+  background-color: rgb(255,255,255,0.5);
+  padding: 1em;
+  border-radius: 25px;
+  width: 75%;
+  height: 75%;
+  backdrop-filter:blur(3px);
+}
+.scenery1 {
+  display:flex;
+  background-image: url('scenery.png');
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.grad {
+  background: linear-gradient(to right, blue,purple);
+}
+.grte {
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.flex {
+  display: flex;  
+}
+.flex >div {
+  border: 1px dotted white;
+  height: max-content;
+}
+.grid {
+  display: grid;
+}
+.grid >div {
+  border: 1px dotted rgb(255, 50, 200);
+}
+.column-c {
+  column-count: 3;
+  column-width: 150px;
+  column-gap: 20px;
+  column-rule: 3px dashed indigo;
+}
+.pos > div{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border: black 1px solid;
+  background-color: white;
+}
+.pos >div:nth-child(2n) {
+  background-color: blueviolet;
+}
+.stick {
+  overflow: auto;
+  background: white;
+  height: 150px;
+  width: 100%;
+  color:black;
+}
+.stick >div {
+  position: sticky;
+  top: 0;
+  background-color: lightblue;
+}
+.navi {
+  position: fixed;
+  z-index: 3;
+  inset: 0 0 auto;
+  background-color: crimson;
+  color: white;
+  padding: 1em;
+}
+.transfo {
+  background: lightblue;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: 1s;
+  margin: 25px;
+}
+.transfo:hover {
+  transform: scale(2) rotate(360deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  width: max-content;
+  display: none;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+  height: 20em;
+}
+.dropdown-content::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(255, 50, 200), rgb(230, 50, 100));
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+/* แสดง dropdown-content เมื่อ details ถูกเปิด */
+details[open] .dropdown-content {
+  position: absolute;
+  display: block;
+  box-shadow: 10px 10px 10px rgb(220, 150, 180);
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+  transition: 0.5s;
+  color: rgb(150, 0, 70);
+}
+summary:hover {
+  font-weight: bold;
+  font-size: large;
+}
+.unv , .unv1 {
+  margin-left: 10px;
+  text-align: center;
+  width: 5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: white;
+  color: rgb(150, 0, 70);
+  box-shadow: 0px 0px 3px rgb(220, 150, 180);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.unv:hover , .unv1:hover {
+  font-size: large;
+  font-weight: bold;
+}
+.grid-unv >div {
+  display: grid; 
+  grid-template-columns: 100px max-content;
+}
+.unv-header {
+  background: linear-gradient(to right, rgb(255, 50, 200), rgb(230, 50, 100));
+  color: white;
+  padding-left: 10px;
+}
+
+.grid-unv1 >div {
+  display: grid; 
+  grid-template-columns: max-content;
+}
+.unv1-header {
+  background: linear-gradient(to right, rgb(255, 50, 200), rgb(230, 50, 100));
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* view on phone */
+@media (max-width: 767px) {
+  .title-box, .content-box {
+    column-count: 1;
+    column-width: auto;
+  }
+  .column {
+    column-count: 1;
+    column-width: auto;
+  }
+  .unv , .unv1 {
+    width: 3em;
+  }
+}
+
+/* view on ipad */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .title-box, .content-box {
+    column-count: 1;
+    column-width: auto;
+  }
+  .column {
+    column-count: 1;
+    column-width: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .title-box, .content-box {
+    column-count: 1;
+    column-width: auto;
+  }
+  .column {
+    column-count: 2;
+    column-width: auto;
+  }
+  .column .indigo-block .table {
+    break-inside: avoid;
+    margin-bottom: 1em;
+  }
+}

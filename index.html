@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Properties of CSS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    .poppins {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: rgb(255, 50, 200);
+    }
+  </style>
+</head>
+<body class="poppins" style= "margin:25px; background-color: rgb(255, 190, 225);">
+<!-- title -->
+<div class="title-box">
+  <h1 style="font-size: 50px;">Basic Properties of CSS</h1>
+    <div>Structure with HTML : &lt;(Element) class="(class)" (Attribute)="..."&gt;Text&lt;/(Element)&gt;
+    <br>Structure of CSS: .(class) > (selector) { (property): (value); }</div><br>or<br><br>
+    <div>Structure HTML and CSS together:<br> &lt;(Element) style="(property): (value);" (Attribute)="..."&gt;Text&lt;/(Element)&gt;</div>
+</div>
+<!-- contents -->
+<section class="contents-box">
+  <div style="display: flex">
+    <div style="position: absolute; display: grid; grid-template-columns: repeat(2,max-content)">
+      <details class="dropdown">
+      <summary class="unv">Units</summary>
+      <div class="dropdown-content grid-unv">
+
+        <div class="unv-header">
+          <b>Length</b>
+        </div>
+        <div>
+          <div><b>px</b></div>
+          <div>pixel</div>
+        </div>
+        <div>
+          <div><b>em</b></div>
+          <div>relative to the font-size of the element</div>
+        </div>
+        <div>
+          <div><b>rem</b></div>
+          <div>relative to the font-size of the root element</div>
+        </div>
+        <div>
+          <div><b>fr</b></div>
+          <div>fraction of the remaining space</div>
+        </div>
+        <div>
+          <div><b>%</b></div>
+          <div>percentage of a parent element’s size</div>
+        </div>
+        <div>
+          <div><b>vw</b></div>
+          <div>% of the viewport's width</div>
+        </div>
+        <div>
+          <div><b>vh</b></div>
+          <div>% of the viewport's height</div>
+        </div>
+        <div>
+          <div><b>vmin</b></div>
+          <div>% of the smaller viewport dimension</div>
+        </div>
+        <div>
+          <div><b>vmax</b></div>
+          <div>% of the larger viewport dimension</div>
+        </div>
+        <div>
+          <div><b>cm</b></div>
+          <div>centimeters</div>
+        </div>
+        <div>
+          <div><b>mm</b></div>
+          <div>millimeters</div>
+        </div>
+        <div>
+          <div><b>in</b></div>
+          <div>inches</div>
+        </div>
+        <div>
+          <div><b>pt</b></div>
+          <div>points</div>
+        </div>
+        <div>
+          <div><b>pc</b></div>
+          <div>picas</div>
+        </div>
+
+        <div class="unv-header">
+          <b>Time</b>
+        </div>
+        <div>
+          <div><b>s</b></div>
+          <div>seconds</div>
+        </div>
+        <div>
+          <div><b>ms</b></div>
+          <div>milliseconds</div>
+        </div>
+
+        <div class="unv-header">
+          <b>Angle</b>
+        </div>
+        <div>
+          <div><b>deg</b></div>
+          <div>degrees</div>
+        </div>
+        <div>
+          <div><b>rad</b></div>
+          <div>radians</div>
+        </div>
+        <div>
+          <div><b>grad</b></div>
+          <div>gradians</div>
+        </div>
+        <div>
+          <div><b>turn</b></div>
+          <div>turns</div>
+        </div>
+
+        <div class="unv-header">
+          <b>Density</b>
+        </div>
+        <div>
+          <div><b>dpi</b></div>
+          <div>dots per inch</div>
+        </div>
+        <div>
+          <div><b>dpcm</b></div>
+          <div>dots per centimeter</div>
+        </div>
+        <div>
+          <div><b>dppx</b></div>
+          <div>dots per pixel</div>
+        </div>
+
+        <div class="unv-header">
+          <b style="white-space: nowrap">Spacial Units</b>
+        </div>
+        <div>
+          <div><b>auto</b></div>
+          <div>automatically calculated</div>
+        </div>
+        <div>
+          <div><b>max</b></div>
+          <div>maximum value</div>
+        </div>
+        <div>
+          <div><b>min</b></div>
+          <div>minimum value</div>
+        </div>
+        <div>
+          <div><b>infinity</b></div>
+          <div>infinite value</div>
+        </div>
+
+
+      </div>
+      </details>
+      
+      <details class="dropdown">
+      <summary class="unv1">Values</summary>
+        <div class="dropdown-content">
+
+          <div class="unv1-header"><b>Positioning</b></div>
+          <div>top</div>
+          <div>bottom</div>
+          <div>left</div>
+          <div>right</div>
+          <div>z-index</div>
+          <div>inset</div>
+          <div>center</div>
+
+          <div class="unv1-header"><b>Flexbox / Grid</b></div>
+          <div>flex-start</div>
+          <div>flex-end</div>
+          <div>start</div>
+          <div>end</div>
+          <div>center</div>
+          <div>stretch</div>
+          <div>baseline</div>
+          <div>space-between</div>
+          <div>space-around</div>
+          <div>space-evenly</div>
+
+          <div class="unv1-header"><b>Margins / Paddings / Borders</b></div>
+          <div>margin-top</div>
+          <div>margin-bottom</div>
+          <div>margin-left</div>
+          <div>margin-right</div>
+          <div>padding-top</div>
+          <div>padding-bottom</div>
+          <div>padding-left</div>
+          <div>padding-right</div>
+          <div>border-top</div>
+          <div>border-bottom</div>
+          <div>border-left</div>
+          <div>border-right</div>
+          <div>border-top-left-radius</div>
+          <div>border-top-right-radius</div>
+          <div>border-bottom-left-radius</div>
+          <div>border-bottom-right-radius</div>
+
+          <div class="unv1-header"><b>Transform</b></div>
+          <div>translateX</div>
+          <div>translateY</div>
+          <div>translateZ</div>
+          <div>scaleX</div>
+          <div>scaleY</div>
+          <div>scaleZ</div>
+          <div>rotateX</div>
+          <div>rotateY</div>
+          <div>rotateZ</div>
+          <div>skewX</div>
+          <div>skewY</div>
+
+          <div class="unv1-header"><b>Box Model</b></div>
+          <div>overflow-x</div>
+          <div>overflow-y</div>
+          <div>scroll-behavior-x</div>
+          <div>scroll-behavior-y</div>
+          <div>background-position-x</div>
+          <div>background-position-y</div>
+          <div>box-shadow-x</div>
+          <div>box-shadow-y</div>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <h2 style="text-align: center; color:rgb(255, 50, 200)">Contents</h2>
+  <div class="contents" style="position: relative;">
+    <div><a href="#pseudo-class">Pseudo Classes</a></div>
+    <div><a href="#pseudo-element">Pseudo Elements</a></div>
+    <div><a href="#text styles">Text Styles</a></div>
+    <div><a href="#box model">Box Model</a></div>
+    <div><a href="#inline block">Inline and Block</a></div>
+    <div><a href="#image and background">Image and Background</a></div>
+    <div><a href="#flexbox">Flexbox</a></div>
+    <div><a href="#grid">Grid</a></div>
+    <div><a href="#column">Column</a></div>
+    <div><a href="#position">Position</a></div>
+    <div><a href="#transition and transform">Transition and Transform</a></div>
+    <div><a href="#animation">Animation</a></div>
+    <div><a href="#media query">Media Query</a></div>
+  </div>
+</section>
+
+  <!-- pseudo class-->
+  <div class="red-block">
+    <h1 id="pseudo-class">Pseudo Classes</h1>
+    <div class="table rb"
+    style="grid-template-columns: 30em 30em 30em 10em;
+    grid-template-rows: repeat(10, minmax(50px, auto));">
+    
+    <div><b>Example Input HTML</b></div>
+    <div><b>Structure CSS</b></div>
+    <div><b>Example Input CSS</b></div>
+    <div><b>Example Output</b></div>
+
+    <div>&lt;button class="btn"&gt;Button&lt;/button&gt;</div>
+    <div>.(Class):<b>hover</b> { property : value; }</div>
+    <div>.btn:<b>hover</b> { background-color : blue; }</div>
+    <div><button class="btn">Button</button></div>
+
+    <div>&lt;button class="btn2"&gt;Button&lt;/button&gt;</div>
+    <div>.(Class):<b>active</b> { property : value; }</div>
+    <div>.btn2:<b>active</b> { <br>outline: solid 3px yellow;<br>routline-offset: 2px; }</div>
+    <div><button class="btn2">Button</button></div>
+
+    <div>&lt;a class="link" href="https://example.com"&gt;Example Link&lt;/a&gt;</div>
+    <div>.(Class):<b>visited</b> { property : value; }</div>
+    <div>.link:<b>visited</b> { color : green; }</div>
+    <div><a class="link" href="https://example.com">Example Link</a></div>
+
+    <div>&lt;input class="input-box" type="text" id="text" name="text"&gt;</div>
+    <div>.(Class):<b>focus</b> { property : value; }</div>
+    <div>.input-box:<b>focus</b> { <br>outline: solid 3px red;<br>outline-offset: 2px; }</div>
+    <div><input class="input-box" style="max-width: 75%" type="text" id="text" name="text"></div>
+
+    <div>&lt;form class="status"&gt;<br>&lt;input type="email"&gt;</div>
+    <div>.(Class):<b>valid</b> { property : value; }<br>
+    .(Class):<b>invalid</b> { property : value; }</div>
+    <div>.status:<b>valid</b> { color: green; }<br>
+    .status:<b>invalid</b> { color: red; }</div>
+    <div>
+      (Try type some email)<br>
+      <form class="status">
+      <input type="email" style="width: 75%">
+    </form></div>
+
+    <!-- checked-status -->
+    <div>
+    &lt;div class="checked-status"&gt;<br>
+      &lt;input type="checkbox"&gt;<br>
+      &lt;span&gt;Checked 1&lt;/span&gt;<br>
+      &lt;input type="checkbox"&gt;<br>
+      &lt;span&gt;Checked 2&lt;/span&gt;<br>
+      &lt;input type="radio" name="choice"&gt;<br>
+      &lt;span&gt;Radio 1&lt;/span&gt;<br>
+      &lt;input type="radio" name="choice"&gt;<br>
+      &lt;span&gt;Radio 2&lt;/span&gt;<br>
+    &lt;/div&gt;
+    </div>
+    <div>
+      .(Class) <b>input[type="(checkbox or radio)"]:checked + span</b> { property : value; }</div>
+    <div>.checked-status <b>input[type="checkbox"]:checked + span</b> {color: green; }
+    <br>.check-status <b>input[type="radio"]:checked + span</b> {color: green; }</div>
+
+    <div class="checked-status">
+        <input type="checkbox">
+        <span>Checked 1</span>
+        <input type="checkbox">
+        <span>Checked 2</span><br>
+        <input type="radio" name="choice">
+        <span>Radio 1</span>
+        <input type="radio" name="choice">
+        <span>Radio 2</span>
+    </div>
+    <!-- indeterminate -->
+    <div>
+      &lt;div class="indet-status"&gt;<br>
+        &lt;input type="checkbox"&gt;<br>
+        &lt;span&gt;Checked 1&lt;/span&gt;<br>
+        &lt;input type="checkbox"&gt;<br>
+        &lt;span&gt;Checked 2&lt;/span&gt;<br>
+        &lt;input type="radio" name="choice"&gt;<br>
+        &lt;span&gt;Radio 1&lt;/span&gt;<br>
+        &lt;input type="radio" name="choice"&gt;<br>
+        &lt;span&gt;Radio 2&lt;/span&gt;<br>
+      &lt;/div&gt;
+      </div>
+      <div>
+        .(Class) <b>input[type="(checkbox or radio)"]:indeterminate + span</b> { property : value; }</div>
+      <div>.indet-status <b>input[type="checkbox"]:indeterminate + span</b> {color: green; }
+      <br>.check-status <b>input[type="radio"]:indeterminate + span</b> {color: green; }</div>
+  
+      <div class="indet-status">
+          <input type="checkbox">
+          <span>Checked 1</span>
+          <input type="checkbox">
+          <span>Checked 2</span><br>
+          <input type="radio" name="choice">
+          <span>Radio 1</span>
+          <input type="radio" name="choice">
+          <span>Radio 2</span>
+      </div>
+    <!-- list -->
+    <div>
+      &lt;ul class="list"&gt;<br>
+        &lt;li&gt;Item 1&lt;/li&gt;<br>
+        &lt;li&gt;Item 2&lt;/li&gt;<br>
+        &lt;li&gt;Item 3&lt;/li&gt;<br>
+        &lt;li&gt;Item 4&lt;/li&gt;<br>
+        &lt;li&gt;Item 5&lt;/li&gt;<br>
+      &lt;/ul&gt;
+    </div>
+    <div>
+      .(Class):<b>first-child</b> { property : value; }<br>
+      .(Class):<b>last-child</b> { property : value; }<br>
+      .(Class):<b>nth-child((no.)n)</b> { property : value; }
+    </div>
+    <div>
+      .list:<b>first-child</b> {color: yellow;}<br>
+      .list:<b>last-child</b> {color: blue;}<br>
+      .list:<b>nth-child(4n)</b> {color: lightgreen;}<br>
+    </div>
+    <div>
+      <ul class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</I>
+      </ul>
+    </div>
+
+    <!-- has and not has -->
+    <div>
+      &lt;div class="with-link"&gt;<br>
+      &lt;a href="https://example.com/"&gt;With link&lt;/a&gt;<br>
+      &lt;/div&gt;<br>
+      &lt;div class="with-link"&gt;<br>
+      &lt;d&gt;Without link&lt;/d&gt;<br>
+      &lt;/div&gt;<br>
+    </div>
+    <div>.(Class):<b>has(selector)</b> { property : value }</div>
+    <div>.with-link:<b>has(a)</b> { background-color : yellow }</div>
+    <div>
+      <div class="with-link">
+        <a href="https://example.com/">With link</a>
+      </div>
+      <div class="with-link">
+        <p>Without link</p>
+      </div>
+      </div>
+
+      <div>
+        &lt;div class="without-link"&gt;<br>
+        &lt;a href="https://example.com/"&gt;With link&lt;/a&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;div class="without-link"&gt;<br>
+        &lt;d&gt;Without link&lt;/d&gt;<br>
+        &lt;/div&gt;<br>
+      </div>
+      <div>.(Class):<b>not(:(pseudo-class)(selector))</b> { property : value }</div>
+      <div>.with-link:<b>not(:has(a))</b> { background-color : yellow }</div>
+      <div>
+        <div class="without-link">
+          <a href="https://example.com/">With link</a>
+        </div>
+        <div class="without-link">
+          <p>Without link</p>
+        </div>
+        </div>
+
+
+</div>
+
+
+</div>
+
+<section class="column">
+  <!-- pseudo-element -->
+  <div class="white-block">
+  <h1 id="pseudo-element">Pseudo Elements</h1>
+  <div class="table rbp";
+    style="grid-template-columns: repeat(4, 25em);
+    grid-template-rows: repeat(5, minmax(50px, auto));">
+
+    <div><b>Example Input HTML</b></div>
+    <div><b>Structure CSS</b></div>
+    <div><b>Example Input CSS</b></div>
+    <div><b>Example Output</b></div>
+
+    <div>&lt;div class="text-one"&gt;Text one&lt;/div&gt;</div>
+    <div>.(Class)::<b>before</b> { property : value; }</div>
+    <div>.text-one::<b>before</b> { content : " * "; }</div>
+    <div><div class="text-one">Text one</div></div>
+
+    <div>&lt;div class="text-two"&gt;Text two&lt;/div&gt;</div>
+    <div>.(Class)::<b>after</b> { property : value; }</div>
+    <div>.text-two::<b>after</b> { content : " * "; }</div>
+    <div><div class="text-two">Text two</div></div>
+  
+    <div>&lt;input name="text" type="text" <br>class="plahol" placeholder="Placeholder"&gt;</div>
+    <div>.(Class)::<b>placeholder</b> { property : value; }</div>
+    <div>.plahol::<b>placeholder</b> { color : blue }</div>
+    <div><input style="width: 75%" name="text" type="text" class="plahol" placeholder="Placeholder"></div>
+  
+    <div>
+      &lt;ul class="star-list"&gt;<br>
+        &lt;li&gt;Item 1&lt;/li&gt;<br>
+        &lt;li&gt;Item 2&lt;/li&gt;<br>
+        &lt;li&gt;Item 3&lt;/li&gt;<br>
+      &lt;/ul&gt;
+    </div>
+    <div>
+      .(Class) li::<b>marker</b> { property : value; }
+      <br>.(Class) ul::<b>marker</b> { property : value; }
+      <br>.(Class) ol::<b>marker</b> { property : value; }
+    </div>
+    <div>.star-list li::<b>marker</b> { content: " ★ "; }</div>
+    <div>
+      <ul class="star-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+    <div>
+      &lt;p class="scroll"&gt;<br>
+      <p style="width:25em">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+      &lt;/p&gt;
+    </div>
+    <div>
+      .(Class)::<b>-webkit-scrollbar</b> { property : value }<br>
+      .(Class)::<b>-webkit-scrollbar-thumb</b> { property : value }
+    </div>
+    <div>
+      .scroll::<b>-webkit-scrollbar</b> {<br>
+        background: darkslategrey;<br>
+        width: 10px; }<br>
+      .scroll::<b>-webkit-scrollbar-thumb</b> {<br>
+        background: cyan; }
+    </div>
+    <div>
+      <p class="scroll">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+  <!-- text-style -->
+  <section>
+  <div class="red-block">
+    <h1 id="text styles">Text Styles</h1>
+    <div class="table rbnor lihi"
+    style="grid-template-columns: 20em 30em 15em;
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+    <div><b>Structure</b></div>
+    <div><b>Example Value</b></div>
+    <div class="exouts"><b>Example Output</b></div>
+
+    <div>
+      <b>color</b>: (color name)<br>
+      <b>color</b>: (color code)<br>
+      <b>color</b>: (color rgb)<br>
+      <b>color</b>: (color rgba)<br>
+    </div>
+    <div>
+      <b>color</b>: yellow<br>
+      <b>color</b>: #ffff00<br>
+      <b>color</b>: rgb(255, 255, 0)<br>
+      <b>color</b>: rgba(255, 255, 0, 0.5)
+    </div>
+    <div>
+      <p style="color: yellow">Name</p>
+      <p style="color: #ffff00">Code</p>
+      <p style="color: rgb(255, 255, 0)">RGB</p>
+      <p style="color: rgba(255, 255, 0, 0.5)">RGBA (+Opacity)</p>
+    </div>
+
+    <div><b>background-color</b>: (color)</div>
+    <div><b>background-color</b>: blue</div>
+    <div><p style="background-color: blue; width: 75%">Background Color</p></div>
+
+    <div><b>font-family</b>: (font name)</div>
+    <div><b>font-family</b>: Courier New</div>
+    <div><p style="font-family: Courier New">Courier New</p></div>
+    
+    <div><b>font-size</b>: (font size)</div>
+    <div>
+      <b>font-size</b>: 1.5em<br>
+      <b>font-size</b>: 150%<br>
+      <b>font-size</b>: 24px<br>
+      <b>font-size</b>: x-large
+    </div>
+    <div>
+      <p style="font-size: 1.5em">font 1.5em</p>
+      <p style="font-size: 150%">font 150%</p>
+      <p style="font-size: 24px">font 24px</p>
+      <p style="font-size: x-large">font x-large</p>
+    </div>
+
+    <div><b>font-weight</b>: (font weight)</div>
+    <div>
+      <b>font-weight</b>: 700<br>
+      <b>font-weight</b>: bold
+    </div>
+    <div>
+      <p style="font-weight: 700 ">weight 700</p>
+      <p style="font-weight: bold">weight bold</p>
+    </div>
+
+    <div><b>font-style</b>: (font style)</div>
+    <div><b>font-style</b>: italic</div>
+    <div><p style="font-style: italic">italic</p></div>
+
+    <div><b>text-align</b>: (text align)</div>
+    <div>
+      <b>text-align</b>: left<br>
+      <b>text-align</b>: start<br>
+      <b>text-align</b>: right<br>
+      <b>text-align</b>: end<br>
+      <b>text-align</b>: center
+    </div>
+    <div>
+      <p style="text-align: left">align</p>
+      <p style="text-align: start">align</p>
+      <p style="text-align: right">align</p>
+      <p style="text-align: end">align</p>
+      <p style="text-align: center">align</p>
+    </div>
+
+    <div><b>text-decoration</b>: (decoration)</div>
+    <div>
+      <b>text-decoration</b>: underline<br>
+      <b>text-decoration</b>: line-through<br>
+      <b>text-decoration</b>: none<br>
+      <b>text-decoration</b>: dashed underline<br>
+      <b>text-decoration</b>: wavy line-through
+    </div>
+    <div>
+      <p style="text-decoration:underline">decoration</p>
+      <p style="text-decoration:line-through">decoration</p>
+      <p style="text-decoration:none">decoration</p>
+      <p style="text-decoration:dashed underline">decoration</p>
+      <p style="text-decoration:wavy line-through">decoration</p>
+    </div>
+
+    <div><b>white-space</b>: nowrap</div>
+    <div><p style="white-space:nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p></div>
+    <div></div>
+
+    <div><b>line-height</b>: (line height)</div>
+    <div><b>line-height</b>: 0.8em</div>
+    <div><p style="line-height: 0.8em">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+
+    <div><b>list-style-type</b>: (style type)</div>
+    <div><b>list-style-type</b>: thai</div>
+    <div>
+      <ul style="list-style-type:thai; line-height: normal">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    <div>
+
+    
+    </div>
+    </div>
+  </section>
+
+  <!-- box model -->
+  <div class="white-block">
+    <h1 id="box model">Box Model</h1>
+    <div class="table rbpnor lihi";
+      style="grid-template-columns: 20em max-content 15em;
+      grid-template-rows: repeat(5, minmax(50px, auto));">
+
+      <div><b>Structure</b></div>
+      <div><b>Example Value</b></div>
+      <div class="exouts"><b>Example Output</b></div>
+
+      <div><b>border</b>: (thickness) (style) (color)</div>
+      <div><b>border</b>: 5px solid purple</div>
+      <div>
+        <p style="border: solid 5px purple; width: 75%">border 1<p>
+        <p style="border: solid 5px purple; width: 75%">border 2<p>
+        <p style="border: solid 5px purple; width: 75%">border 5<p>
+      </div>
+
+      <div><b>outline</b>: (thickness) (style) (color)</div>
+      <div><b>outline</b>: 5px solid red</div>
+      <div>
+        <p style="outline: solid 5px red; width: 75%">outline 1<p>
+        <p style="outline: solid 5px red; width: 75%">outline 2<p>
+        <p style="outline: solid 5px red; width: 75%">outline 3<p>
+        </div>
+
+      <div><b>margin</b>: (width)</div>
+      <div><b>margin</b>: 2em</div>
+      <div>
+        <p style="margin: 2em">text 1(with margin)</p>
+        <p>text 2(no margin)</p>
+        <p>text 3(no margin)</p>
+      </div>
+
+      <div><b>padding</b>: (width)</div>
+      <div><b>padding</b>: 1em</div>
+      <div>
+        <p style="width:160px; padding: 1em; background-color: yellow">box 1(with padding)</p>
+        <p style="width:160px; background-color: yellow">box 2(no padding)</p>
+      </div>
+
+      <div class="boco"><b>border-collapse</b>: (format)</div>
+      <div class="boco"><b>border-collapse</b>: separate</div>
+      <div class="boco">
+        <table class="sep-tab">
+          <tbody>
+            <tr>
+              <td>Sep 1</td>
+              <td>Sep 2</td>
+              <td>Sep 3</td>
+            </tr>
+            <tr>
+              <td>Sep 4</td>
+              <td>Sep 5</td>
+              <td>Sep 6</td>
+            </tr>
+            <tr>
+              <td>Sep 7</td>
+              <td>Sep 8</td>
+              <td>Sep 9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div></div>
+      <div><b>border-collapse</b>: collapse</div>
+      <div>
+        <table class="col-tab">
+          <tbody>
+            <tr>
+              <td>Col 1</td>
+              <td>Col 2</td>
+              <td>Col 3</td>
+            </tr>
+            <tr>
+              <td>Col 4</td>
+              <td>Col 5</td>
+              <td>Col 6</td>
+            </tr>
+            <tr>
+              <td>Col 7</td>
+              <td>Col 8</td>
+              <td>Col 9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div><b>border-radius</b>: (radius)</div>
+      <div>
+        <b>border-radius</b>: 1em<br>
+        <b>border-radius</b>: 9999px<br>
+        <b>border-radius</b>: 50%
+      </div>
+      <div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 0.5em; margin-bottom: 1em">radius</div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 9999px; margin-bottom: 1em">full radius</div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 50%;">oval</div>
+      </div>
+
+      <div><b>box-shadow</b>: (x) (y) (blur) (color)</div>
+      <div><b>box-shadow</b>: 5px 5px 5px rgb(0, 0, 0, 0.5)</div>
+      <div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; box-shadow: 5px 5px 5px rgb(00,00,00,0.5)">shadow</div>
+      </div>
+
+      <div><b>overflow</b>: (value)</div>
+      <div><b>overflow</b>: auto</div>
+      <div>
+        <section>
+          <p class="overflow">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+      </div>
+
+      <div>
+        <div>(property): <b>linear-gradient</b><br>(to [position], [color], [color])</div>
+        <div>(property): <b>radial-gradient</b><br>([circle or ellipse], [color], [color])</div>
+        <div>(property): <b>conic-gradient</b><br>(from [deg], [color], [color])</div>
+      </div>
+      <div>
+        background: <b>linear-gradient</b><br>(to right, red, blue)<br>
+        background: <b>radial-gradient</b><br>(circle, red, blue)<br>
+        background: <b>conic-gradient</b><br>(from 45deg, red, blue, yellow)
+      </div>
+      <div style="line-height: normal;">
+        <div style="color: white; background: linear-gradient(to right, red, blue)">linear</div>
+        <div style="margin-top: 1em; color: white; background: radial-gradient(circle, red, blue)">linear</div>
+        <div style="margin-top: 1em; color: white; background: conic-gradient(from 45deg, red, blue, yellow)">linear</div>
+      </div>
+
+      <div>
+        <div>background: (gradient);<br><b>background-clip: text;<br>-webkit-background-clip: text;<br>-webkit-text-fill-color: transparent</b></div>
+      </div>
+      <div>
+        background: linear-gradient(to right, red, blue);<br>
+        <b>background-clip: text;<br>
+        -webkit-background-clip: text;<br>
+        -webkit-text-fill-color: transparent;</b>
+      </div>
+      <div class="grte">
+        <b>gradient text</b>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- inline &block -->
+  <div class="red-block">
+    <h1 id="inline block">Inline and block</h1>
+
+    <div class="table-ib">
+      <div>
+        <section style="max-width: 25em;">
+          <h3>Inline Elements</h3>
+          &lt;a&gt; &lt;abbr&gt; &lt;b&gt; &lt;br&gt; &lt;button&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;img&gt; &lt;input&gt; &lt;kbd&gt;
+          &lt;label&gt; &lt;samp&gt; &lt;select&gt; &lt;span&gt; &lt;strong&gt; &lt;sub&gt; &lt;sup&gt; &lt;textarea&gt;
+        </section>
+      </div>
+      <div>
+        <section style="max-width: 25em;">
+          <h3>Block Elements</h3>
+          &lt;blockquote&gt; &lt;div&gt; &lt;footer&gt; &lt;form&gt; &lt;h1&gt;-&lt;h6&gt; &lt;header&gt; &lt;hr&gt; &lt;li&gt; &lt;main&gt; &lt;ol&gt; &lt;p&gt; &lt;section&gt; &lt;table&gt; &lt;tfoot&gt; &lt;ul&gt;
+        </section>
+      </div>
+
+      <div  class="table-ibdo">
+        <div>
+            <h3>Example Input</h3>
+            &lt;p&gt;inline 1&lt;/p&gt;<br>
+            &lt;p&gt;inline 2&lt;/p&gt;<br>
+            &lt;p&gt;inline 3&lt;/p&gt;
+        </div>
+        <div>
+            <h3>Example Output</h3>
+            <p style="line-height: 0.8em;">inline 1</p>
+            <p style="line-height: 0.8em;">inline 2</p>
+            <p style="line-height: 0.8em;">inline 3</p>
+        </div>
+      </div>
+      <div  class="table-ibdo">
+        <div>
+            <h3>Example Input</h3>
+            &lt;span&gt;block 1&lt;/span&gt;<br>
+            &lt;span&gt;block 2&lt;/span&gt;<br>
+            &lt;span&gt;block 3&lt;/span&gt;
+        </div>
+        <div>
+            <h3>Example Output</h3>
+            <span style="line-height: 0.8em;">block 1</span>
+            <span style="line-height: 0.8em;">block 2</span>
+            <span style="line-height: 0.8em;">block 3</span>
+        </div>
+      </div>
+
+      <div class="table-ibdo">
+        <div><b>Inline</b> and <b>Inline-block</b><br> will be centered<br>if <b>text-align: center</b></div>
+        <div><div style="text-align: center; padding-right: 2em;"><span>inline</span></div></div> 
+      </div>
+      <div class="table-ibdo">
+        <div><b>Block</b> will be centered<br>if <b>width: </b>(width) and<br><b>margin: 0 auto</b></div>
+        <div><div style="width:60px ; margin: 0 auto; padding-right: 2em;"><p>block</p></div></div>
+      </div>
+    </div>
+
+    <h1>Inline & Inline-block</h1>
+      <div class="table-ib" style="gap: 0px"> <!--table-->
+        <div style="justify-content: center;"><h2>Inline</h2></div>
+        <div style="justify-content: center;"><h2>Inline-block</h2></div>
+
+        
+        <div style="display: grid; grid-template-columns: repeat(2,250px); grid-template-rows: repeat(1,max-content)">
+            
+            <div style="margin-left: 10px"> <!--cell 1-->
+              <h3>Example Input CSS</h3>
+              <div>
+                .class {<br>
+                border: 1px solid black; }<br>
+                .class &gt; span {<br>
+                background-color: coral; }<br>
+              </div>
+            </div> <!--cell 1-->
+
+            <div style="margin-left: 10px"> <!--cell 2-->
+              <div>
+                <h3>Example Output</h3>
+                <div class="inlblo">
+                  <span>inline box 1</span>
+                  <span>inline box 2</span>
+                  <span>inline box 3</span>
+                  <span>another inline box</span>
+                </div>
+              </div>
+            </div> <!--cell 2-->
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2,250px); grid-template-rows: repeat(1,max-content)">
+            <div style="margin-left: 10px"> <!--cell 3-->
+              <div>
+                <h3>Example Input CSS</h3>
+                .class {<br>
+                border: 1px solid black }<br>
+                .class &gt; span {<br>
+                <b>display: inline-block;</b><br>
+                  background-color: coral; }<br>
+              </div>
+            </div> <!--cell 3-->
+
+            <div style="margin-left: 10px"> <!--cell 4-->
+              <div>
+                <h3>Example Output</h3>
+                <div class="inlbloblo">
+                  <span>inline box 1</span>
+                  <span>inline box 2</span>
+                  <span>inline box 3</span>
+                  <span>another inline box</span>
+                </div>
+              </div>
+            </div> <!--cell 4-->
+
+        </div>
+
+      </div> <!--table-->
+    </div>
+  </div>
+
+  <!-- image and background -->
+  <div class="white-block">
+    <h1 id="image and background">Image and Background</h1>
+    
+    <div class="imba"> <!--imba-->
+      <div>
+        <img src="orange-cat.jpg" width="200" height="200">
+        <p>(no filter)</p>
+      </div>
+      <div>
+        <img style="filter: blur(3px)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>blur(px)</b></p>
+      </div>
+      <div>
+        <img style="filter: brightness(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>brightness(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: contrast(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>contrast(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: grayscale(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>grayscale(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: hue-rotate(90deg)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>hue-rotate(deg)</b></p>
+      </div>
+      <div>
+        <img style="filter: invert(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>invert(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: opacity(50%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>opacity(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: saturate(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>saturate(%)</b></p>
+      </div>
+      <div>
+        <img style="filter: sepia(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p>filter: <b>sepia(%)</b></p>
+      </div>
+      <div>
+        <div class="scenery1"><div class="whsq1"></div></div>
+        <p>(normal filter)</p>
+      </div>
+      <div>
+        <div class="scenery1"><div class="whsq2"></div></div>
+        <p><b>backdrop-filter</b>: (filter)</p>
+      </div>
+    </div> <!--imba-->
+    <div style="margin-top: 2em;" class="table-obfi"> <!--ibp 2-->
+      <!-- object-fit-->
+      <div>
+        <div><b>Example Input</b><br>
+        width: 200px; <br>height: 400px;</div><br><br>
+        <div>
+          <b>Example Output</b><br>
+          <img style="width:200px; height:400px" src="city.jpg">
+        </div>
+      </div>
+      <div>
+        <div><b>Example Input</b><br>
+        width: 200px; <br>height: 400px;<br><b>object-fit: cover;</b></div><br>
+        <div>
+          <b>Example Output</b><br>
+          <img style="width:200px; height:400px; object-fit: cover" src="city.jpg">
+        </div>
+      </div>
+      <!-- pattern bg -->
+      <div>
+        <div><b>Example Input</b><br>
+          background-image: url('bubble-pattern.png');<br>
+          overflow: auto;<br>
+          height: 15em;<br>
+          width: 75%;<br>
+          color: white;<br>
+          padding: 1em;<br><br><br>
+        <b>Example Output</b>
+        <div class="pattern1">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      </div>
+      <div>
+        <div><b>Example Input</b><br>
+          background-image: url('bubble-pattern.png');<br>
+          overflow: auto;<br>
+          height: 15em;<br>
+          width: 75%;<br>
+          color: white;<br>
+          padding: 1em;<br>
+          <b style="white-space: nowrap">background-attachment: local;</b><br><br>
+        <b>Example Output</b>
+        <div class="pattern2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div> <!--pattern bg-->
+  </div>
+  </div>
+
+  <!--flexbox-->
+  <div class="red-block">
+    <h1 id="flexbox">Flexbox</h1>
+    <div class="table rbnor"
+    style="grid-template-columns: 20em 20em 15em;
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+      <div><b>Structure</b></div>
+      <div><b>Example Input</b></div>
+      <div><b>Example Output</b></div>
+
+      <div>display: flex</div>
+      <div>display: flex</div>
+      <div class="flex">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div>
+        display: flex<br>
+        <b>justify-content</b>: (position)<br>
+        (justify in horizontal)
+      </div>
+      <div>
+        display: flex<br>
+        <b>justify-content</b>: center
+      </div>
+      <div class="flex" style="justify-content: center">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>  
+
+      <div>
+        display: flex<br>
+        <b>align-items</b>: (position)<br>
+        (align in vertical)
+      </div>
+      <div>
+        display: flex<br>
+        <b>align-items</b>: center
+      </div>
+      <div class="flex" style="align-items: center">
+        <div>flex 1</div>
+        <div style="background: blue; height: 5em; width: 3em;"></div>
+        <div>flex 3</div>
+      </div>
+
+      <div>
+        display: flex<br>
+        <b>gap</b>: (size)
+      </div>
+      <div>
+        display: flex<br>
+        <b>gap</b>: 10px
+      </div>
+      <div class="flex" style="gap: 10px">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div style="grid-row: span 2">
+        display: flex<br>
+        <b>flex-wrap</b>: (wrap or nowrap)
+      </div>
+      <div style="border: none">
+        display: flex<br>
+        <b>flex-wrap</b>: wrap
+      </div>
+      <div class="flex" style="border: none; flex-wrap: wrap">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+        <div>flex 4</div>
+        <div>flex 5</div>
+        <div>flex 6</div>
+        <div>flex 7</div>
+        <div>flex 8</div>
+        <div>flex 9</div>
+      </div>
+
+      <div>
+        display: flex<br>
+        <b>flex-wrap</b>: nowrap
+      </div>
+      <div class="flex" style="flex-wrap: nowrap">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+        <div>flex 4</div>
+        <div>flex 5</div>
+        <div>flex 6</div>
+        <div>flex 7</div>
+        <div>flex 8</div>
+        <div>flex 9</div>
+      </div>
+
+      <div>
+        display: flex<br>
+        <b>flex-direction</b>: (column or row)
+      </div>
+      <div>
+        display: flex<br>
+        <b>flex-direction</b>: column
+      </div>
+      <div class="flex" style="flex-direction: column">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div><b>flex-basis</b>: (width)</div>
+      <div><b>flex-basis</b>: 20px</div>
+      <div class="flex">
+        <div style="flex-basis: 20px">flex 1</div>
+        <div style="flex-basis: 20px">flex 2</div>
+        <div style="flex-basis: 20px">flex 3</div>
+      </div>
+
+      <div><b>flex-grow</b>: (width)</div>
+      <div>
+      <b>flex-grow</b>: 3<br>
+      <b>flex-grow</b>: 1<br>
+      <b>flex-grow</b>: 3
+      </div>
+      <div class="flex">
+        <div style="flex-grow: 3">flex 1</div>
+        <div style="flex-grow: 1">flex 2</div>
+        <div style="flex-grow: 3">flex 3</div>
+      </div>
+
+      <div><b>flex-shrink</b>: (width)</div>
+      <div>
+      <b>flex-shrink</b>: 2<br>
+      (in flex 1)
+      </div>
+      <div class="flex" style="width: 400px">
+        <div style="flex-basis: 150px; flex-shrink: 2">flex 1</div>
+        <div style=" flex-basis: 150px">flex 2</div>
+        <div style=" flex-basis: 150px">flex 3</div>
+        <div style=" flex-basis: 150px">flex 4</div>
+        <div style=" flex-basis: 150px">flex 5</div>
+        <div style=" flex-basis: 150px">flex 6</div>
+        <div style=" flex-basis: 150px">flex 7</div>
+        <div style=" flex-basis: 150px">flex 8</div>
+        <div style=" flex-basis: 150px">flex 9</div> 
+      </div>
+
+    </div>
+  </div>
+
+  <!-- grid -->
+  <div class="white-block">
+    <h1 id="grid">Grid</h1>
+    <div class="table rbpnor"
+    style="grid-template-columns: 25em 25em 15em;
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+      <div><b>Structure</b></div>
+      <div><b>Example Input</b></div>
+      <div><b>Example Output</b></div>
+
+      <div>display: grid</div>
+      <div>display: grid</div>
+      <div class="grid">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+      </div>
+
+      <div>
+        display: grid<br>
+      <b>grid-template-columns</b>: (column width)<br>
+      <b>grid-template-rows</b>: (row width)
+      </div>
+      <div>
+        display: grid<br>
+        <b>grid-template-columns</b>: 10em 10em 10em<br>
+        <b>grid-template-rows</b>: 2em 5em
+        <br>or<br>
+        display: grid<br>
+        <b>grid-template-columns</b>: repeat(3, 10em)<br>
+        <b>grid-template-rows</b>: 2em 5em
+      </div>
+      <div class="grid" style="grid-template-columns: 10em 10em 10em; grid-template-rows: 2em 5em">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div>
+        display: grid<br>
+      <b>gap</b>: (size)<br>
+      </div>
+      <div>
+        display: grid<br>
+        <b>gap</b>: 10px<br>
+      </div>
+      <div class="grid" style="gap: 10px">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+      </div>
+
+      <div>
+        <b>grid-column</b>: span (number)<br>
+        <b>grid-row</b>: span (number)
+        <br>(column span in horizontal)
+        <br>(row span in vertical)
+      </div>
+      <div>
+        <b>grid-column</b>: span 2 <br>(in grid 1)<br>
+        <b>grid-row</b>: span 2 <br>(in grid 4)<br>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(3,auto); grid-template-rows: repeat(3, auto);">
+        <div style="grid-column: span 2">grid 1</div>
+        <div>grid 3</div>
+        <div style="grid-row: span 2">grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+        <div>grid 8</div>
+        <div>grid 9</div>
+      </div>
+
+      <div>
+        <b>justify-items</b>: (position)<br>
+        <b>align-items</b>: (position)
+      </div>
+      <div>
+        <b>justify-items</b>: center<br>
+        <b>align-items</b>: center
+      </div>
+      <div class="grid"
+      style="
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 50px);
+        justify-items: center;
+        align-items: center;
+      ">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div>
+        <b>justify-content</b>: (position)<br>
+        <b>align-content</b>: (position)
+      </div>
+      <div>
+        <b>justify-content</b>: center<br>
+        <b>align-content</b>: center
+      </div>
+      <div class="grid"
+      style="
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 50px);
+        justify-content: center;
+        align-content: center;
+      ">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div>
+        <b>grid-auto-columns</b>: (column width)<br>
+        <b>grid-auto-rows</b>: (row width)<br>
+        (specify and lock the size of columns/rows)
+      </div>
+      <div>
+        <b>grid-auto-columns</b>: 50px<br>
+        <b>grid-auto-rows</b>: 50px<br>
+      </div>
+      <div> (Can't preview here)</div>
+
+  </div>
+  </div>
+
+  <!-- column -->
+    <div class="red-block">
+      <h1 id="column">Column</h1>
+      <div class="table rb" style="grid-template-columns: repeat(2, 25em); grid-template-rows: repeat(2, max-content);">
+
+        <div><b>Structure</b></div>
+        <div><b>Example Input</b></div>
+
+        <div>
+          <b>column-count</b>: (number)<br>
+          <b>column-width</b>: (width)<br>
+          <b>column-gap</b>: (size)<br>
+          <b>column-rule</b>: (thickness) (style) (color)
+        </div>
+        <div>
+          <b>column-count</b>: 3;<br>
+          <b>column-width</b>: 150px;<br>
+          <b>column-gap</b>: 20px;<br>
+          <b>column-rule</b>: 3px dashed indigo;
+        </div>
+
+        <div style="border-bottom: 1px solid white; grid-column: span 2"><b>Example Output</b></div>
+
+        <div style="grid-column: span 2">
+          <div class="column-c">
+            <p>
+              Lorem ipsum odor amet, consectetuer adipiscing elit. Dignissim risus nisi neque inceptos diam tellus. Est vitae accumsan blandit vel ligula varius leo turpis? Diam senectus per cursus vulputate hendrerit nam accumsan. Arcu in posuere nam per ultrices, curabitur habitasse dui. Aliquet auctor non potenti taciti sociosqu pharetra litora. Interdum inceptos aptent, ad dictum cursus vivamus viverra tempus!
+            </p>
+            <p>
+              Nisl ultricies quis etiam ridiculus tristique ac suscipit adipiscing. Erat phasellus primis ut ad vehicula ante sit orci eget! Sollicitudin vel class quam elementum lorem ac. Placerat vehicula hac maximus netus sollicitudin eu nam. Etiam felis mus elementum pretium tellus dapibus adipiscing. Suspendisse consequat class libero finibus sem; hac conubia volutpat. Nibh mattis praesent molestie class scelerisque venenatis ac gravida. Volutpat fermentum dis arcu cursus metus posuere pulvinar. Dis vulputate tincidunt sapien sit ullamcorper condimentum.
+            </p>
+            <p>
+              Mi at libero adipiscing mauris litora venenatis vulputate lacus enim. Morbi elementum taciti litora, elit id aptent et. Tempor litora nulla arcu maximus; lobortis eget mauris. Libero sit ridiculus amet hendrerit vivamus morbi turpis fusce. Dolor morbi taciti lacinia sem fringilla. Adipiscing congue cubilia class fames erat laoreet auctor fusce. Ipsum in fermentum felis felis finibus. Consequat gravida imperdiet platea nisi lacinia quisque.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!--position-->
+  <div class="white-block">
+    <h1 id="position">Position</h1>
+    <div class="table rbpnor" style="grid-template-columns: repeat(2, 25em) max-content; grid-template-rows: repeat(auto, max-content);">
+
+      <div><b>Structure</b></div>
+      <div><b>Example Input</b></div>
+      <div><b>Example Output</b></div>
+      
+      <div>
+        <b>position</b>: static<br>
+        (default)
+      </div>
+      <div>
+        <b>position</b>: static<br>
+      </div>
+      <div class="pos">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div>
+        <b>margin</b>: (width)<br>
+      </div>
+      <div>
+        <b>margin</b>-left: 10px<br>
+        <b>margin</b>-top: 10px
+      </div>
+      <div class="pos">
+        <div></div>
+        <div style="margin-left: 10px; margin-top: 10px"></div>
+        <div></div>
+      </div>
+
+      <div>
+        <b>position: relative</b>; 
+        (position): (width)<br>
+      </div>
+
+      <div>
+        <b>position: relative</b>; left: 10px<br>
+        <b>position: relative</b>; top: 10px
+      </div>
+      <div class="pos">
+        <div></div>
+        <div style="position: relative; left: 10px; top: 10px;"></div>
+        <div></div>
+      </div>
+
+      <div>
+        <b>position: absolute</b>; (position): (width)<br>
+        (the parent should have <b>position: relative;</b>)
+      </div>
+      <div>
+        <b>position: absolute</b>; left: 10px<br>
+        <b>position: absolute</b>; top: 10px
+      </div>
+      <div class="pos" style="position: relative">
+        <div></div>
+        <div style="position: absolute; left: 10px; top: 10px;"></div>
+        <div></div>
+      </div>
+
+      <div>
+        <b>position: sticky<br>
+        top: 0</b>
+      </div>
+      <div>
+        <b>position: sticky<br>
+        top: 0</b>
+      </div>
+      <div class="stick" style="padding: 0px">
+        <div>Group 1</div>
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+        <div>Group 2</div>
+        <p>Item 4</p>
+        <p>Item 5</p>
+        <p>Item 6</p>
+        <div>Group 3</div>
+        <p>Item 7</p>
+        <p>Item 8</p>
+        <p>Item 9</p>
+        <div>Group 4</div>
+        <p>Item 10</p>
+        <p>Item 11</p>
+        <p>Item 12</p>
+      </div>
+
+      <div>
+        <b>position: fixed;<br>
+        inset: 0 0 auto;</b>
+      </div>
+      <div>
+        <b>position: fixed;<br>
+        inset: 0 0 auto;</b>
+      </div>
+      <div>(on the top of the screen)</div>
+
+    </div>
+  </div>
+
+  <!-- transition and transform -->
+  <div class="red-block">
+    <h1 id="transition and transform"> Transition and Transform</h1>
+    <div class="table rbnor" style="grid-template-columns: repeat(3,max-content); grid-template-rows: repeat(2, max-content);">
+
+      <div><b>Structure</b></div>
+      <div><b>Example Input</b></div>
+      <div><b>Example Output</b></div>
+
+      <div>
+        <b>transition</b>: time<br>
+        <b>transform</b>: property(value)
+      </div>
+      <div>
+        <b>transition</b>: 1s<br>
+        <b>transfrom</b>: size(2) rotate(360deg)
+      </div>
+      <div>
+        <div class="transfo" style="transition: 1s"></div>
+      </div>
+
+    </div>
+
+    <h1>Properties</h1>
+    <div class="table rbnor" style="gap: 0; grid-template-columns: 10em auto; grid-template-rows: repeat(auto, max-content);">
+      
+      <div>translate(x,y)</div>
+      <div>moves an element</div>
+      <div>rotate(deg)</div>
+      <div>rotates an element</div>
+      <div>scale(x,y)</div>
+      <div>resizes an element</div>
+      <div>skew(x,y)</div>
+      <div>distorts an element</div>
+      <div>matrix()</div>
+      <div style="border-bottom: 1px solid white">combines multiple 2d transformations</div>
+      <div>matrix3d()</div>
+      <div>transforms in 3D</div>
+
+    </div>
+  </div>
+
+  <!-- animation -->
+  <div class="white-block">
+    <h1 id="animation">Animation</h1>
+  
+    <h2>animation: (properties)</h2>
+    <h1>Properties</h1>
+    <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
+
+      <div style="grid-column: span 2;"><b>animation-name: (@keyframes name)</b></div>
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)">
+        @keyframes (animation-name) {<br>
+          0% { property : value; }<br>
+          50% { property : value; }<br>
+          100% { property : value; }<br>
+        }
+      </div>
+
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><b>animation-duration: (time)</b></div>
+      <div style="grid-column: span 2;"><b>animation-timing-function: (function)</b></div>
+      <div>linear</div>
+      <div>(moves at a constant speed)</div>
+      <div>ease-in-out</div>
+      <div>(starts slow → speeds up in the middle → slows down at the end)</div>
+      
+      <!-- detail -->
+      <div>step( number,
+        <details class="dropdown">
+        <summary class="dropdown-button">jump</summary>
+          <div class="dropdown-content">
+
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>start</b></div>
+              <div>jumps at the start of each step</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>end</b></div>
+              <div>jumps at the end of each step</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>jump-none</b></div>
+              <div>jump evenly within the steps</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>jump-both</b></div>
+              <div>jumps at both the start and the end</div>
+            </div>
+            
+          </div>
+        </details>
+
+      )</div>
+      <div>(moves in [number] steps, not smooth)</div>
+      <!-- detail -->
+
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">cubic-bezier(x1, y1, x2, y2)</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">(customizes the motion curve using control points)</div>
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><b>animation-delay: (time)</b></div>
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><b>animation-iteration-count: (number)</b></div>
+      <div style="grid-column: span 2"><b>animation-direction: (direction)</b></div>
+      <div>normal</div>
+      <div>(plays forward, from start to end)</div>
+      <div>reverse</div>
+      <div>(plays backward, from end to start)</div>
+      <div>alternate</div>
+      <div>(plays normal direction, then reverse)</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">alternate-reverse</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">(plays reverse direction, then normal)</div>
+      <div style="grid-column: span 2"><b>animation-fill-mode: (mode)</b></div>
+      <div>none</div>
+      <div>(no effect on the element’s state after it ends)</div>
+      <div>forwards</div>
+      <div>(the element returns to initial state when started)</div>
+      <div>backwards</div>
+      <div>(the element returns to initial state when ended)</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">both</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">(the element returns to initial state when started and ended)</div>
+      <div style="grid-column: span 2"><b>animation-play-state: (paused or running)</b></div>
+
+    </div>
+    </div>
+      
+  <!-- Media Query -->
+  <div class="red-block">
+    <h1 id="media query">Media Query</h1">
+    <h2>
+      @media (min or max-width: px) {<br>
+        .class { property : value; }<br>
+      }
+    </h2>
+
+    <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
+      <div style="border-bottom: 1px white solid;"><b>Device</b></div>
+      <div style="border-bottom: 1px white solid;"><b>Width</b></div>
+
+      <div>phone</div>
+      <div>@media (max-width: 767px)</div>
+
+      <div>tablet</div>
+      <div>@media (min-width: 768px) and (max-width: 1024px)</div>
+
+      <div>desktop</div>
+      <div>@media (min-width: 1025px)</div>
+
+      <div>in portriat</div>
+      <div>(orientation: portrait)</div>
+
+      <div>in landscape</div>
+      <div>(orientation: landscape)</div>
+
+      <div>dark theme</div>
+      <div>(prefers-color-scheme: dark)</div>
+
+    </div>
+  </div>
+
+  </div>
+<div class="navi">navigation</div>
+
+</section>
+</body>
+</html>
