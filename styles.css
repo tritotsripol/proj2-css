@@ -419,20 +419,6 @@ h1 {
   display: none;
   position: relative;
   z-index: 2;
-  overflow-y: auto;
-  height: 20em;
-}
-.dropdown-content::-webkit-scrollbar {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 25px;
-  width: 15px;
-  height: 15px;
-}
-.dropdown-content::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgb(255, 50, 200), rgb(230, 50, 100));
-  border-radius: 25px;
-  width: 50%;
-  height: 15px;
 }
 /* แสดง dropdown-content เมื่อ details ถูกเปิด */
 details[open] .dropdown-content {
