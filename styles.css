@@ -43,7 +43,7 @@ h1 {
 .column {
   column-count:2;
   column-gap: 1em;
-  height: auto;
+  height: max-content;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
