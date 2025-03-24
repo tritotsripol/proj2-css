@@ -1,0 +1,812 @@
+/*---------------------
+        System 
+---------------------*/
+h1 {
+  font-size: 36px;
+  margin-top: 25px;
+  margin-bottom:25px;
+}
+.web {
+  margin:25px; 
+  background-color: #4C0033;
+}
+.struc {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.struc::-webkit-scrollbar {
+  background: rgba(0,0,0, 0.5);
+  border-radius: 25px;
+}
+.struc::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.5);
+  border-radius: 25px;
+}
+.bodys::-webkit-scrollbar {
+  background: rgba(0,0,0, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.bodys::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.5);
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+/*---------------------
+        System 
+---------------------*/
+
+.title-box {
+  text-align: center;
+  color: white;
+  background: linear-gradient(to bottom, #E80F88, #AF0171);
+  padding-top: 0.5em;
+  padding-bottom: 3em;
+  border-radius: 25px;
+  margin-bottom: 1em;
+  background-image: url('pinky-pattern-01.png');
+  background-size: auto 750px;
+  background-repeat: repeat;
+} 
+.contents-box {
+  background: linear-gradient(to bottom,rgb(255, 235, 252),rgb(255, 200, 225));
+  border-radius: 25px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  padding: 10px;
+}
+.contenttext {
+  text-align: center; color:#E80F88
+}
+.contents {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+}
+.contents > div > a {
+  text-decoration: none;
+  color:#E80F88;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.contents > div > a:hover {
+  color: #AF0171;
+  font-weight: bold; 
+  font-size: large;
+}
+.column {
+  column-count:2;
+  column-gap: 1em;
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.column >div {
+  break-inside: avoid;
+}
+
+/*---------------------
+        System 
+---------------------*/
+
+/*------- reddy block -------*/
+.red-block {
+  overflow-y: auto;
+  background: linear-gradient(to bottom, #E80F88, #AF0171);
+  padding: 1em;
+  border-radius: 25px;
+  color: white;
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+.red-block::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.red-block::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+.red-block:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 20px rgba(150, 0, 70, 0.5)
+}
+/*------- reddy block -------*/
+
+/*------- whitey block -------*/
+.white-block {
+  overflow-y: auto;
+  background: linear-gradient(to bottom,rgb(255, 235, 252),rgb(255, 200, 225));
+  padding: 1em;
+  border-radius: 25px;
+  color: #E80F88;
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+.white-block::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  width: 15px;
+  height: 15px;
+}
+.white-block::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #E80F88, #AF0171);
+  border-radius: 25px;
+  width: 50%;
+  height: 15px;
+}
+.white-block:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 20px rgba(255, 200, 225, 0.5);
+}
+/*------- whitey block -------*/
+/*---------------------
+        Table 
+---------------------*/
+
+.table {
+  display: grid;
+  gap: 10px;
+}
+.table > div{
+  padding: 1em;
+}
+.rb > div:not(:nth-last-child(-n+4)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbp > div:not(:nth-last-child(-n+4)) {
+  border-bottom: solid 1px #E80F88;
+  padding-bottom: 1em;
+}
+.rbnor > div:not(:nth-last-child(-n+3)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbpnor > div:not(:nth-last-child(-n+3)):not(.boco) {
+  border-bottom: solid 1px #E80F88;
+  padding-bottom: 1em;
+}
+.rbib > div:not(:nth-last-child(-n+2)) {
+  border-bottom: solid 1px white;
+  padding-bottom: 1em;
+}
+.rbibp > div:not(:nth-last-child(-n+2)) {
+  border-bottom: solid 1px #E80F88;
+  padding-bottom: 1em;
+}
+.table-ib {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 30em);
+}
+.table-ib > div {
+  padding: 1em;
+  display:grid; 
+  grid-template-columns: auto auto;
+}
+.table-ib > div:not(:nth-child(2n)) {
+  border-right: solid 1px white;
+}
+.table-ibp {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 30em);
+}
+.table-ibp > div {
+  padding: 1em;
+  display:grid; 
+  grid-template-columns: auto auto;
+}
+.table-ibp > div:not(:nth-child(2n)) {
+  border-right: solid 1px #E80F88;
+}
+.table-obfi > div:not(:nth-child(4n)) {
+  border-right: solid 1px #E80F88;
+}
+.table-obfi {
+  display:grid; 
+  grid-template-columns: 15em 15em 25em 25em;
+  grid-template-rows: repeat(2,auto);
+  gap: 2em;
+}
+.lihi > div:nth-child(3n):not(.exouts) {
+  line-height: 15px;
+}
+/*---------------------
+        Table 
+---------------------*/
+
+/* example button */
+.btn:hover {
+  background-color: blue;
+}
+.btn2:active {
+  outline: solid 3px yellow;
+  outline-offset: 2px;
+}
+.link:visited {
+  color: green;
+}
+.input-box:focus  {
+  outline: solid 3px red;
+  outline-offset: 2px;
+}
+.status :valid {
+  color: green;
+}
+.status :invalid {
+  color: red;
+}
+.checked-status input[type="checkbox"]:checked + span {
+  color: green;
+}
+.checked-status input[type="radio"]:checked + span {
+  color: green;
+}
+.indet-status input[type="checkbox"]:indeterminate + span {
+  color: green;
+}
+.indet-status input[type="radio"]:indeterminate + span {
+  color: green;
+}
+/* list */
+.list :first-child {color: yellow;}
+.list :last-child {color: blue;}
+.list :nth-child(4n) {color: lightgreen;}
+.with-link:has(a) {
+  background-color:yellow;
+}
+.without-link:not(:has(a)) {
+  background-color: yellow;
+}
+.text-one::before {
+  content: " * ";
+}
+.text-two::after {
+  content: " * ";
+}
+.plahol::placeholder {
+  color: blue;
+}
+.star-list li::marker {
+  content: " ★ ";
+}
+.sep-tab {
+  border-collapse: separate;
+  margin-bottom: 0.5em;
+}
+.sep-tab td, .sep-tab th {
+  border: 1px solid blue;
+}
+.col-tab {
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+}
+.col-tab td, .col-tab th {
+  border: 1px solid blue;
+}
+.inlblo {
+  border: 1px solid black;
+  width: 150px;
+}
+.inlblo > span {
+  background-color: coral;
+}
+.inlbloblo {
+  border: 1px solid black;
+  width: 150px;
+}
+.inlbloblo > span {
+  background-color: coral;
+  display: inline-block;
+}
+.overflow {
+  overflow:auto;
+  background: white;
+  padding: 1em;
+  width: 75%;
+  height: 5em; 
+}
+.scroll {
+  overflow: auto;
+  background-color: white;
+  padding: 1em;
+  width: 75%;
+  height: 5em;
+}
+.scroll::-webkit-scrollbar {
+  background: darkslategrey;
+  width: 10px;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background: cyan;
+}
+.imba {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6,auto);
+  grid-template-rows: repeat(2,auto);
+}
+.imba >div {
+  text-align: center;
+  margin-right: 1em;
+}
+.pattern1 {
+  background-image: url('bubble-pattern.png');
+  overflow: auto;
+  height: 275px;
+  width: 75%;
+  color: white;
+  padding: 1em;
+}
+.pattern2 {
+  background-image: url('bubble-pattern.png');
+  background-attachment: local;
+  overflow: auto;
+  height: 275px;
+  width: 75%;
+  color: white;
+  padding: 1em;
+}
+.whsq1 {
+  background-color: rgb(255,255,255,0.5);
+  padding: 1em;
+  border-radius: 25px;
+  width: 75%;
+  height: 75%;
+  filter:blur(3px);
+}
+.whsq2 {
+  background-color: rgb(255,255,255,0.5);
+  padding: 1em;
+  border-radius: 25px;
+  width: 75%;
+  height: 75%;
+  backdrop-filter:blur(3px);
+}
+.scenery1 {
+  display:flex;
+  background-image: url('scenery.png');
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.grad {
+  background: linear-gradient(to right, blue,purple);
+}
+.grte {
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.flex {
+  display: flex;  
+}
+.flex >div {
+  border: 1px dotted white;
+  height: max-content;
+}
+.grid {
+  display: grid;
+}
+.grid >div {
+  border: 1px dotted #E80F88;
+}
+.column-c {
+  column-count: 3;
+  column-width: 150px;
+  column-gap: 20px;
+  column-rule: 3px dashed indigo;
+}
+.pos > div{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border: black 1px solid;
+  background-color: white;
+}
+.pos >div:nth-child(2n) {
+  background-color: blueviolet;
+}
+.stick {
+  overflow: auto;
+  background: white;
+  height: 150px;
+  width: 100%;
+  color:black;
+}
+.stick >div {
+  position: sticky;
+  top: 0;
+  background-color: lightblue;
+}
+.navi {
+  position: fixed;
+  z-index: 3;
+  inset: 0 0 auto;
+  background-color: crimson;
+  color: white;
+  padding: 1em;
+}
+.transfo {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  margin: 20px;
+  transition: transform 3s ease 0.5s, background-color 3s ease 0.5s;
+}
+
+.transfo:hover {
+  transform: rotate(360deg) scale(1.5);
+  background-color: lightcoral;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  width: max-content;
+  display: none;
+  position: relative;
+  z-index: 2;
+}
+/* แสดง dropdown-content เมื่อ details ถูกเปิด */
+details[open] .dropdown-content {
+  position: absolute;
+  display: block;
+  box-shadow: 0px 0px 20px rgba(31, 31, 31, 0.5);
+  color: white;
+  font-weight: 200;
+}
+details[open] .dropdown-content > b, div > b {
+  font-weight: 400;
+}
+.dedetail summary::after {
+  content: "▶";
+  position: absolute;
+  margin-left: 10px;
+  transition: transform 0.5s ease;
+}
+.dedetail[open] summary::after {
+  transform: rotate(90deg);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  transition: 0.5s;
+  color: rgb(150, 0, 70);
+}
+summary:hover {
+  font-weight: bold;
+  font-size: large;
+}
+.unv , .unv1, .unvright {
+  margin-left: 10px;
+  text-align: center;
+  width: 5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: #1f1f1f;
+  color: white;
+  box-shadow: 0px 0px 5px rgba(220, 150, 180, 0.5);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.unvright {
+  width: max-content;
+  z-index: 999;
+}
+
+.unv:hover , .unv1:hover {
+  font-size: large;
+  font-weight: bold;
+}
+.grid-unv >div {
+  display: grid; 
+  grid-template-columns: 100px max-content;
+}
+.unv-header {
+  background: linear-gradient(to right, #E80F88, #AF0171);
+  color: white;
+  padding-left: 10px;
+  font-weight: normal;
+}
+.unv-header > b, div > b {
+  font-weight: 400;
+}
+
+.grid-unv1 >div {
+  display: grid; 
+  grid-template-columns: max-content;
+}
+.unv1-header {
+  background: linear-gradient(to right, #E80F88, #AF0171);
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.unv1-header > b, div > b {
+  font-weight: 400;
+}
+.summy {
+  color: white; font-weight: 400
+}
+
+/*--------------
+    buttons
+--------------- */
+
+/* buttons */
+.buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  position: fixed;
+  inset: auto 25px 25px auto;
+}
+/* buttons */
+
+/* gotop button */
+.gotop {
+  width: 5em;
+  height: 3em;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: solid 1px black;
+  box-shadow:0 0 5px rgba(175, 1, 113, 0.5);
+  transition: background-color 1s ease, box-shadow 1s ease;
+}
+.gotop:hover {
+  background-color: black;
+  box-shadow: 0 0 5px rgba(0,0,0, 1);
+}
+.uppy {
+  filter: invert(1);
+  opacity: 0.5;
+}
+.gotop:hover .uppy {
+  transition: opacity 1s ease;  
+  opacity: 1;
+}
+/* gotop button */
+
+/* sectionbtn */
+.sectionbtn {
+  width: 5em ;
+  height: 3em ;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: solid 1px black;
+  box-shadow:0 0 5px rgba(175, 1, 113, 0.5);
+  transition: background-color 1s ease, color 1s ease, box-shadow 1s ease;
+}
+.sectionbtn:hover {
+  background-color: black;
+  box-shadow: 0 0 5px rgba(0,0,0,1);
+}
+.sectionbtn:focus {
+  outline: none;
+}
+select.sectionbtn {
+  color: rgba(255,255,255,0.5);
+  font-family: 'Kanit', sans-serif;
+  appearance: none;
+  text-align: center;
+  font-weight: bold;
+}
+select.sectionbtn:hover {
+  color: white;
+}
+select.sectionbtn div {
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  appearance: none;
+  text-align: center;
+}
+select.sectionbtn option {
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  background-color:#1f1f1f;
+}
+/* sectionbtn */
+
+/* themebtn */
+.themebtn {
+  width: 5em ;
+  height: 3em ;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  border: solid 1px black;
+  box-shadow:0 0 5px rgba(27, 26, 85,0.5);
+  transition: background-color 1s ease, color 1s ease, box-shadow 1s ease;
+}
+.themebtn:hover {
+  background-color: black;
+  box-shadow: 0 0 5px rgba(0,0,0,1);
+}
+.themeicon {
+  filter: invert(1);
+  opacity: 0.5;
+}
+.themebtn:hover .themeicon {
+  transition: opacity 1s ease;  
+  opacity: 1;
+}
+/* themebtn */
+
+/*--------------
+    buttons
+--------------- */
+
+/* view on phone */
+@media (max-width: 767px) {
+  .title-box, .content-box {
+    column-count: 1;
+    column-width: auto;
+  }
+  .column {
+    column-count: 1;
+    column-width: auto;
+  }
+  .unv , .unv1 {
+    width: 3em;
+  }
+}
+
+/* view on ipad */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .title-box, .content-box {
+    column-count: 1;
+    column-width: auto;
+  }
+  .column {
+    column-count: 1;
+    column-width: auto;
+  }
+}
+
+/* darkth */
+.web.dark {
+  background-color: #4C0033;
+}
+body.dark .summy {
+  color: white; font-weight: 400
+}
+/* darkth */
+
+/* lightth */
+.web.light {
+  background-color: #ffbbe0;
+}
+body.light .title-box {
+  color: white;
+}
+body.light .contents-box {
+  background: linear-gradient(to bottom, #ffffff, #ffdff0);
+  color: #ff2eb6;
+}
+body.light .contents > div > a {
+  color: #ff2eb6;
+}
+body.light .contents > div > a:hover {
+  color: #c3007e;
+}
+
+body.light .red-block {
+  background: linear-gradient(to bottom, #ff2eb6, #ff36a4);
+  color: white;
+}
+body.light .red-block:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 20px #ff2eb680;
+}
+body.light .white-block:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+body.light .white-block {
+  background: linear-gradient(to bottom, #ffffff, #ffdff0);
+  color: #ff2eb6;
+}
+body.light .white-block::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to right,
+    #ff2eb6bf,
+    #ff36a4bf
+  );
+}
+
+body.light::-webkit-scrollbar {
+  background: rgba(255,255,255, 0.5);
+}
+body.light::-webkit-scrollbar-thumb {
+  background: #ff2eb680;
+}
+
+body.light .gotop, body.light .themebtn {
+  background-color: rgba(255,255,255,0.5);
+  border: solid 1px white;
+  box-shadow:0 0 5px #ff2eb680;
+  transition: background-color 1s ease, box-shadow 1s ease;
+}
+body.light .gotop:hover, body.light .themebtn:hover {
+  background-color: white;
+  box-shadow: 0 0 5px rgba(255,255,255, 1);
+}
+body.light .uppy, body.light .themeicon {
+  filter: invert(0);
+  opacity: 0.5;
+}
+body.light .sectionbtn {
+  background-color: rgba(255,255,255,0.5);
+  border: solid 1px white;
+  box-shadow:0 0 5px #ff2eb680;
+  transition: background-color 1s ease, color 1s ease, box-shadow 1s ease;
+}
+body.light .sectionbtn:hover {
+  background-color: white;
+  box-shadow: 0 0 5px rgba(255,255,255,1);
+}
+body.light select.sectionbtn {
+  color: rgba(0,0,0,0.5);
+}
+body.light select.sectionbtn:hover {
+  color: black;
+}
+body.light select.sectionbtn div {
+  color: black;
+}
+body.light select.sectionbtn option {
+  color: black;
+  background-color:white;
+}
+body.light .dropdown-content {
+  background-color: white;
+}
+/* แสดง dropdown-content เมื่อ details ถูกเปิด */
+body.light details[open] .dropdown-content {
+  box-shadow: 0px 0px 20px #ff2eb680;
+  color: black;
+}
+body.light summary {
+  color: #ff2eb6;
+}
+body.light .unv ,body.light .unv1,body.light .unvright {
+  background: white;
+  color: black;
+  box-shadow: 0px 0px 5px #ff2eb680;
+}
+body.light .summy {
+  color: black; font-weight: 400
+}
+body.light .unv1-header,body.light .unv-header {
+  background: linear-gradient(to right, #ff2eb6, #ff36a4);
+}
+
+/* lightth */

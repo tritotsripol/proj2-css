@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Properties of CSS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" id="prism-theme">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" id="prism-light-theme" disabled>
+  <meta property="og:image" content="favicon.png">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    .Kanit {
+      font-family: 'Kanit', sans-serif;
+      font-weight: 400;
+    }
+    pre {
+      border-radius: 10px;
+      width: max-content;
+      padding: 5px !important;
+      display: inline;
+    }
+    .codebr pre {
+      display: inline-block;
+      padding: 5px !important;
+      white-space: normal;
+      word-wrap: break-word;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body class="Kanit web bodys">
+<!-- title -->
+<div class="title-box">
+  <h1 style="font-size: 50px;" data-en="Basic Properties of CSS" data-th="คุณสมบัติ CSS พื้นฐาน">Basic Properties of CSS</h1>
+  <div style="padding: 10px; display: block; gap: 10px">
+    <section style="display: flex; flex-wrap: wrap; justify-content:center;">
+      <div data-en="Structure with HTML:" data-th="โครงสร้างร่วมกับ HTML:">Structure with HTML :</div>&nbsp;&nbsp;&nbsp;
+      <div class="struc"><pre><code class="language-html">&lt;(Element) class="(class)" (Attribute)="..."&gt;Text&lt;/(Element)&gt;</code></pre></div>
+    </section>
+    <section style="line-height: 2.5em; display: flex; flex-wrap: wrap; justify-content:center;">
+      <div data-en="Structure of CSS:" data-th="โครงสร้างของ CSS:">Structure of CSS :</div> &nbsp;&nbsp;&nbsp;
+      <div class="struc"><pre><code class="language-css">.(class) > (selector) { (property): (value); }</code></pre></div>
+    </section>
+      <div data-en="or" data-th="หรือ">or</div>
+    <section style="display: flex; flex-wrap: wrap; justify-content:center;">
+      <div data-en="Structure HTML and CSS together:" data-th="โครงสร้างรวม HTML กับ CSS:">Structure HTML and CSS together :</div>&nbsp;&nbsp;&nbsp;
+      <div class="struc"><pre><code class="language-html">&lt;(Element) style="(property): (value);" (Attribute)="..."&gt;Text&lt;/(Element)&gt;</code></pre></div>
+    </section>
+    </div>
+  </div>
+<!-- contents -->
+<section class="contents-box">
+  <div style="display: flex">
+    <div style="position: absolute; display: grid; grid-template-columns: repeat(2,max-content)">
+      <details class="dropdown">
+      <summary class="unv" data-en="Units" data-th="หน่วย">Units</summary>
+      <div class="dropdown-content grid-unv">
+
+          <div class="unv-header" data-th="ความยาว" data-en="Length">
+            <b>Length</b>
+          </div>
+          <div>
+            <div><b data-th="px" data-en="px">px</b></div>
+            <div data-th="พิกเซล" data-en="pixel">pixel</div>
+          </div>
+          <div>
+            <div><b data-th="em" data-en="em">em</b></div>
+            <div data-th="สัมพันธ์กับขนาดฟอนต์ขององค์ประกอบ" data-en="relative to the font-size of the element">relative to the font-size of the element</div>
+          </div>
+          <div>
+            <div><b data-th="rem" data-en="rem">rem</b></div>
+            <div data-th="สัมพันธ์กับขนาดฟอนต์ขององค์ประกอบหลัก" data-en="relative to the font-size of the root element">relative to the font-size of the root element</div>
+          </div>
+          <div>
+            <div><b data-th="fr" data-en="fr">fr</b></div>
+            <div data-th="ส่วนของพื้นที่ที่เหลือ" data-en="fraction of the remaining space">fraction of the remaining space</div>
+          </div>
+          <div>
+            <div><b data-th="%" data-en="%">%</b></div>
+            <div data-th="เปอร์เซ็นต์ของขนาดขององค์ประกอบพาเรนต์" data-en="percentage of a parent element’s size">percentage of a parent element’s size</div>
+          </div>
+          <div>
+            <div><b data-th="vw" data-en="vw">vw</b></div>
+            <div data-th="เปอร์เซ็นต์ของความกว้างของ viewport" data-en="% of the viewport's width">% of the viewport's width</div>
+          </div>
+          <div>
+            <div><b data-th="vh" data-en="vh">vh</b></div>
+            <div data-th="เปอร์เซ็นต์ของความสูงของ viewport" data-en="% of the viewport's height">% of the viewport's height</div>
+          </div>
+          <div>
+            <div><b data-th="vmin" data-en="vmin">vmin</b></div>
+            <div data-th="เปอร์เซ็นต์ของขนาดที่เล็กที่สุดของ viewport" data-en="% of the smaller viewport dimension">% of the smaller viewport dimension</div>
+          </div>
+          <div>
+            <div><b data-th="vmax" data-en="vmax">vmax</b></div>
+            <div data-th="เปอร์เซ็นต์ของขนาดที่ใหญ่ที่สุดของ viewport" data-en="% of the larger viewport dimension">% of the larger viewport dimension</div>
+          </div>
+          <div>
+            <div><b data-th="cm" data-en="cm">cm</b></div>
+            <div data-th="เซนติเมตร" data-en="centimeters">centimeters</div>
+          </div>
+          <div>
+            <div><b data-th="mm" data-en="mm">mm</b></div>
+            <div data-th="มิลลิเมตร" data-en="millimeters">millimeters</div>
+          </div>
+          <div>
+            <div><b data-th="in" data-en="in">in</b></div>
+            <div data-th="นิ้ว" data-en="inches">inches</div>
+          </div>
+          <div>
+            <div><b data-th="pt" data-en="pt">pt</b></div>
+            <div data-th="จุด" data-en="points">points</div>
+          </div>
+          <div>
+            <div><b data-th="pc" data-en="pc">pc</b></div>
+            <div data-th="พิก้า" data-en="picas">picas</div>
+          </div>
+        
+          <div class="unv-header" data-th="เวลา" data-en="Time">
+            <b>Time</b>
+          </div>
+          <div>
+            <div><b data-th="s" data-en="s">s</b></div>
+            <div data-th="วินาที" data-en="seconds">seconds</div>
+          </div>
+          <div>
+            <div><b data-th="ms" data-en="ms">ms</b></div>
+            <div data-th="มิลลิวินาที" data-en="milliseconds">milliseconds</div>
+          </div>
+        
+          <div class="unv-header" data-th="มุม" data-en="Angle">
+            <b>Angle</b>
+          </div>
+          <div>
+            <div><b data-th="deg" data-en="deg">deg</b></div>
+            <div data-th="องศา" data-en="degrees">degrees</div>
+          </div>
+          <div>
+            <div><b data-th="rad" data-en="rad">rad</b></div>
+            <div data-th="เรเดียน" data-en="radians">radians</div>
+          </div>
+          <div>
+            <div><b data-th="grad" data-en="grad">grad</b></div>
+            <div data-th="เกรเดียน" data-en="gradians">gradians</div>
+          </div>
+          <div>
+            <div><b data-th="turn" data-en="turn">turn</b></div>
+            <div data-th="การหมุน" data-en="turns">turns</div>
+          </div>
+        
+          <div class="unv-header" data-th="ความหนาแน่น" data-en="Density">
+            <b>Density</b>
+          </div>
+          <div>
+            <div><b data-th="dpi" data-en="dpi">dpi</b></div>
+            <div data-th="จุดต่ออินช์" data-en="dots per inch">dots per inch</div>
+          </div>
+          <div>
+            <div><b data-th="dpcm" data-en="dpcm">dpcm</b></div>
+            <div data-th="จุดต่อเซนติเมตร" data-en="dots per centimeter">dots per centimeter</div>
+          </div>
+          <div>
+            <div><b data-th="dppx" data-en="dppx">dppx</b></div>
+            <div data-th="จุดต่อพิกเซล" data-en="dots per pixel">dots per pixel</div>
+          </div>
+        
+          <div class="unv-header" data-th="หน่วยเชิงพื้นที่" data-en="Spacial Units">
+            <b style="white-space: nowrap">Spacial Units</b>
+          </div>
+          <div>
+            <div><b data-th="auto" data-en="auto">auto</b></div>
+            <div data-th="คำนวณโดยอัตโนมัติ" data-en="automatically calculated">automatically calculated</div>
+          </div>
+          <div>
+            <div><b data-th="max" data-en="max">max</b></div>
+            <div data-th="ค่ามากที่สุด" data-en="maximum value">maximum value</div>
+          </div>
+          <div>
+            <div><b data-th="min" data-en="min">min</b></div>
+            <div data-th="ค่าน้อยที่สุด" data-en="minimum value">minimum value</div>
+          </div>
+          <div>
+            <div><b data-th="infinity" data-en="infinity">infinity</b></div>
+            <div data-th="ค่าที่ไม่มีที่สิ้นสุด" data-en="infinite value">infinite value</div>
+          </div>
+
+      </div>
+      </details>
+      
+      <details class="dropdown">
+      <summary class="unv1" data-en="Values" data-th="ตัวแปร">Values</summary>
+        <div class="dropdown-content">
+
+          <div class="unv1-header"><b>Positioning</b></div>
+          <div>top</div>
+          <div>bottom</div>
+          <div>left</div>
+          <div>right</div>
+          <div>z-index</div>
+          <div>inset</div>
+          <div>center</div>
+
+          <div class="unv1-header"><b>Flexbox / Grid</b></div>
+          <div>flex-start</div>
+          <div>flex-end</div>
+          <div>start</div>
+          <div>end</div>
+          <div>center</div>
+          <div>stretch</div>
+          <div>baseline</div>
+          <div>space-between</div>
+          <div>space-around</div>
+          <div>space-evenly</div>
+
+          <div class="unv1-header"><b>Margins / Paddings / Borders</b></div>
+          <div>margin-top</div>
+          <div>margin-bottom</div>
+          <div>margin-left</div>
+          <div>margin-right</div>
+          <div>padding-top</div>
+          <div>padding-bottom</div>
+          <div>padding-left</div>
+          <div>padding-right</div>
+          <div>border-top</div>
+          <div>border-bottom</div>
+          <div>border-left</div>
+          <div>border-right</div>
+          <div>border-top-left-radius</div>
+          <div>border-top-right-radius</div>
+          <div>border-bottom-left-radius</div>
+          <div>border-bottom-right-radius</div>
+
+          <div class="unv1-header"><b>Transform</b></div>
+          <div>translateX</div>
+          <div>translateY</div>
+          <div>translateZ</div>
+          <div>scaleX</div>
+          <div>scaleY</div>
+          <div>scaleZ</div>
+          <div>rotateX</div>
+          <div>rotateY</div>
+          <div>rotateZ</div>
+          <div>skewX</div>
+          <div>skewY</div>
+
+          <div class="unv1-header"><b>Box Model</b></div>
+          <div>overflow-x</div>
+          <div>overflow-y</div>
+          <div>scroll-behavior-x</div>
+          <div>scroll-behavior-y</div>
+          <div>background-position-x</div>
+          <div>background-position-y</div>
+          <div>box-shadow-x</div>
+          <div>box-shadow-y</div>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <h2 class="contenttext" data-en="Contents" data-th="เนื้อหา">Contents</h2>
+  <div class="contents" style="position: relative;">
+    <div><a href="#pseudo-class">Pseudo Classes</a></div>
+    <div><a href="#pseudo-element">Pseudo Elements</a></div>
+    <div><a href="#text styles">Text Styles</a></div>
+    <div><a href="#box model">Box Model</a></div>
+    <div><a href="#inline block">Inline and Block</a></div>
+    <div><a href="#image and background">Image and Background</a></div>
+    <div><a href="#flexbox">Flexbox</a></div>
+    <div><a href="#grid">Grid</a></div>
+    <div><a href="#column">Column</a></div>
+    <div><a href="#position">Position</a></div>
+    <div><a href="#transition and transform">Transition and Transform</a></div>
+    <div><a href="#animation">Animation</a></div>
+    <div><a href="#media query">Media Query</a></div>
+  </div>
+</section>
+
+  <!-- pseudo class-->
+  <div class="red-block" style="position: relative;">
+    <section style="display: flex; flex-wrap: nowrap; align-items: center; gap: 10px;">
+        <h1 id="pseudo-class">Pseudo Classes</h1>
+      <details class="dropdown">
+        <summary class="unvright" data-en="Other Pseudo Classes" data-th="Pseudo Classes ตัวอื่นๆ">Other Pseudo Classes</summary>
+        <div class="dropdown-content">
+          <details class="dedetail">
+            <summary class="summy">:-moz-...</summary>
+            <div>:-moz-drag-over</div>
+            <div>:-moz-first-nodeExperimental</div>
+            <div>:-moz-handler-blocked</div>
+            <div>:-moz-handler-crashed</div>
+            <div>:-moz-handler-disabled</div>
+            <div>:-moz-last-nodeExperimental</div>
+            <div>:-moz-loading</div>
+            <div>:-moz-locale-dir(ltr)</div>
+            <div>:-moz-locale-dir(rtl)</div>
+            <div>:-moz-only-whitespace</div>
+            <div>:-moz-submit-invalid</div>
+            <div>:-moz-suppressed</div>
+            <div>:-moz-user-disabled</div>
+            <div>:-moz-window-inactive</div>
+          </details>
+          <div>:active</div>
+          <div>:any-link</div>
+          <div>:autofill</div>
+          <div>:blankExperimental</div>
+          <div>:buffering</div>
+          <div>:checked</div>
+          <div>:currentExperimental</div>
+          <div>:default</div>
+          <div>:defined</div>
+          <div>:dir()</div>
+          <div>:disabled</div>
+          <div>:empty</div>
+          <div>:enabled</div>
+        </div>
+      </details>
+    </section>
+
+    <div class="table rb"
+    style="grid-template-columns: 30em 30em 30em max-content;
+    grid-template-rows: repeat(10, minmax(50px, auto));">
+    
+    <div><b data-en="Example Input HTML" data-th="ตัวอย่าง HTML">Example Input HTML</b></div>
+    <div><b data-en="Structure CSS" data-th="โครงสร้างของ CSS">Structure CSS</b></div>
+    <div><b data-en="Example Input CSS" data-th="ตัวอย่าง CSS">Example Input CSS</b></div>
+    <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+    <div><pre><code class="language-html">&lt;button class="btn"&gt;Button&lt;/button&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class):<b>hover</b> { property : value; }</code></pre></div>
+    <div><pre><code class="language-css">.btn:<b>hover</b> { background-color : blue; }</code></pre></div>
+    <div><button class="btn">Button</button></div>
+
+    <div><pre><code class="language-html">&lt;button class="btn2"&gt;Button&lt;/button&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class):<b>active</b> { property : value; }</code></pre></div>
+    <div class="codebr"><pre><code class="language-css">.btn2:<b>active</b> { 
+  outline: solid 3px yellow;
+  routline-offset: 2px; 
+}</code></pre></div>
+    <div><button class="btn2">Button</button></div>
+
+    <div class="codebr"><pre><code class="language-html">&lt;a class="link" href="https://example.com"&gt;
+  Example Link
+&lt;/a&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class):<b>visited</b> { property : value; }</code></pre></div>
+    <div><pre><code class="language-css">.link:<b>visited</b> { color : green; }</code></pre></div>
+    <div><a class="link" href="https://example.com">Example Link</a></div>
+
+    <div class="codebr"><pre><code class="language-html">&lt;input class="input-box" type="text" 
+id="text" name="text"&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class):<b>focus</b> { property : value; }</code></pre></div>
+    <div class="codebr"><pre><code class="language-css">.input-box:<b>focus</b> {
+  outline: solid 3px red;
+  outline-offset: 2px; 
+}</code></pre></div>
+    <div><input class="input-box" style="max-width: 75%" type="text" id="text" name="text"></div>
+
+    <div class="codebr"><pre><code class="language-html">&lt;form class="status"&gt;
+&lt;input type="email"&gt;</code></pre></div>
+    <div class="codebr"><pre><code class="language-css">.(Class):<b>valid</b> { property : value; }
+.(Class):<b>invalid</b> { property : value; }</code></pre></div>
+    <div class="codebr"><pre><code class="language-css">.status:<b>valid</b> { color: green; }
+.status:<b>invalid</b> { color: red; }</code></pre></div>
+    <div>
+      <div data-en="(Try type some email)" data-th="(ลองพิมพ์อีเมล)"></div>
+      <form class="status">
+      <input type="email" style="width: 75%">
+    </form></div>
+
+    <!-- checked-status -->
+  <div class="codebr"><pre><code class="language-html">&lt;div class="checked-status"&gt;<br>
+  &lt;input type="checkbox"&gt;<br>
+  &lt;span&gt;Checked 1&lt;/span&gt;<br>
+  &lt;input type="checkbox"&gt;<br>
+  &lt;span&gt;Checked 2&lt;/span&gt;<br>
+  &lt;input type="radio" name="choice"&gt;<br>
+  &lt;span&gt;Radio 1&lt;/span&gt;<br>
+  &lt;input type="radio" name="choice"&gt;<br>
+  &lt;span&gt;Radio 2&lt;/span&gt;<br>
+&lt;/div&gt;</code></pre></div>
+    
+    <div class="codebr"><pre><code class="language-css">.(Class) <b>input[type="(checkbox or radio)"]
+:checked + span</b> {
+  property : value; 
+}</code></pre></div>
+    <div class="codebr"><pre><code class="language-css">.checked-status <b>input[type="checkbox"]
+:checked + span</b> {
+  color: green; 
+}
+.check-status <b>input[type="radio"]
+:checked + span</b> {
+  color: green; 
+}</code></pre></div>
+
+    <div class="checked-status">
+        <input type="checkbox">
+        <span>Checked 1</span>
+        <input type="checkbox">
+        <span>Checked 2</span><br>
+        <input type="radio" name="choice">
+        <span>Radio 1</span>
+        <input type="radio" name="choice">
+        <span>Radio 2</span>
+    </div>
+
+    <!-- indeterminate -->
+    <div class="codebr"><pre><code class="language-html">&lt;div class="indet-status"&gt;<br>
+  &lt;input type="checkbox"&gt;<br>
+  &lt;span&gt;Checked 1&lt;/span&gt;<br>
+  &lt;input type="checkbox"&gt;<br>
+  &lt;span&gt;Checked 2&lt;/span&gt;<br>
+  &lt;input type="radio" name="choice"&gt;<br>
+  &lt;span&gt;Radio 1&lt;/span&gt;<br>
+  &lt;input type="radio" name="choice"&gt;<br>
+  &lt;span&gt;Radio 2&lt;/span&gt;<br>
+&lt;/div&gt;</code></pre></div>
+      <div class="codebr">
+<pre><code class="language-css">.(Class) <b>input[type="(checkbox or radio)"]
+:indeterminate + span</b> { 
+  property : value; 
+}</code></pre></div>
+
+      <div class="codebr">
+<pre><code class="language-css">.indet-status <b>input[type="checkbox"]
+:indeterminate + span</b> {
+  color: green; 
+}
+.check-status input[type="radio"]
+:indeterminate + span</b> {
+  color: green; 
+}</code></pre></div>
+  
+      <div class="indet-status">
+          <input type="checkbox">
+          <span>Checked 1</span>
+          <input type="checkbox">
+          <span>Checked 2</span><br>
+          <input type="radio" name="choice">
+          <span>Radio 1</span>
+          <input type="radio" name="choice">
+          <span>Radio 2</span>
+      </div>
+    <!-- list -->
+    <div class="codebr">
+<pre><code class="language-html">&lt;ul class="list"&gt;<br>
+  &lt;li&gt;Item 1&lt;/li&gt;<br>
+  &lt;li&gt;Item 2&lt;/li&gt;<br>
+  &lt;li&gt;Item 3&lt;/li&gt;<br>
+  &lt;li&gt;Item 4&lt;/li&gt;<br>
+  &lt;li&gt;Item 5&lt;/li&gt;<br>
+&lt;/ul&gt;</code></pre></div>
+
+    <div class="codebr">
+<pre><code class="language-css">.(Class):<b>first-child</b> { property : value; }<br>
+.(Class):<b>last-child</b> { property : value; }<br>
+.(Class):<b>nth-child((no.)n)</b> { property : value; }</code></pre></div>
+    <div class="codebr">
+<pre><code class="language-css">.list:<b>first-child</b> {color: yellow;}<br>
+.list:<b>last-child</b> {color: blue;}
+.list:<b>nth-child(4n)</b> {color: lightgreen;}</code></pre></div>
+    <div>
+      <ul class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</I>
+      </ul>
+    </div>
+
+    <!-- has and not has -->
+    <div class="codebr">
+<pre><code class="language-html">&lt;div class="with-link"&gt;
+  &lt;a href="https://example.com/"&gt;With link&lt;/a&gt;
+&lt;/div&gt;<br>
+&lt;div class="with-link"&gt;<br>
+  &lt;p&gt;Without link&lt;/p&gt;<br>
+&lt;/div&gt;</code></pre></div>
+
+    <div><pre><code class="language-css">.(Class):<b>has(selector)</b> { property : value }</code></pre></div>    
+    <div><pre><code class="language-css">.with-link:<b>has(a)</b> { background-color : yellow }</code></pre></div>
+    <div>
+      <div class="with-link">
+        <a href="https://example.com/">With link</a>
+      </div>
+      <div class="with-link">
+        <p>Without link</p>
+      </div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-html">&lt;div class="without-link"&gt;
+  &lt;a href="https://example.com/"&gt;With link&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="without-link"&gt;
+  &lt;p&gt;Without link&lt;/p&gt;
+&lt;/div&gt;</code></pre></div>
+
+      <div class="codebr"><pre><code class="language-css">.(Class):<b>not(:(pseudo-class)(selector))</b> { 
+  property : value 
+}</code></pre></div>
+
+      <div class="codebr"><pre><code class="language-css">.with-link:<b>not(:has(a))</b> { 
+  background-color : yellow 
+}</code></pre></div>
+      <div>
+        <div class="without-link">
+          <a href="https://example.com/">With link</a>
+        </div>
+        <div class="without-link">
+          <p>Without link</p>
+        </div>
+        </div>
+
+
+</div>
+
+
+</div>
+
+<section class="column">
+<div>
+  <!-- pseudo-element -->
+  <div class="white-block">
+    <section style="display: flex; flex-wrap: nowrap; align-items: center; gap: 10px;">
+      <h1 id="pseudo-element">Pseudo Elements</h1>
+    <details class="dropdown">
+      <summary class="unvright" data-en="Other Pseudo Elements" data-th="Pseudo Elements ตัวอื่นๆ">Other Pseudo Elements</summary>
+      <div class="dropdown-content">
+        <details class="dedetail">
+          <summary class="summy">::-moz-...</summary>
+          <div>::-moz-color-swatch</div>
+          <div>::-moz-focus-innerExperimental</div>
+          <div>::-moz-list-bulletExperimental</div>
+          <div>::-moz-list-numberExperimental</div>
+          <div>::-moz-meter-bar</div>
+          <div>::-moz-progress-barExperimental</div>
+          <div>::-moz-range-progress</div>
+          <div>::-moz-range-thumb</div>
+          <div>::-moz-range-track</div>
+        </details>
+        <details class="dedetail">
+          <summary class="summy">::-webkit-...</summary>
+          <div>::-webkit-inner-spin-button</div>
+          <div>::-webkit-meter-even-less-good-value</div>
+          <div>::-webkit-meter-inner-element</div>
+          <div>::-webkit-meter-optimum-value</div>
+          <div>::-webkit-meter-suboptimum-value</div>
+          <div>::-webkit-progress-bar</div>
+          <div>::-webkit-progress-inner-element</div>
+          <div>::-webkit-progress-value</div>
+          <div>::-webkit-scrollbar</div>
+          <div>::-webkit-search-cancel-button</div>
+          <div>::-webkit-search-results-button</div>
+          <div>::-webkit-slider-runnable-track</div>
+          <div>::-webkit-slider-thumb</div>
+        </details>
+        <div>::after</div>
+        <div>::backdrop</div>
+        <div>::before</div>
+        <div>::cue</div>
+        <div>::details-content</div>
+        <div>::file-selector-button</div>
+        <div>::first-letter</div>
+        <div>::first-line</div>
+        <div>::grammar-error</div>
+        <div>::highlight()</div>
+        <div>::marker</div>
+        <div>::part()</div>
+        <div>::placeholder</div>
+        <div>::selection</div>
+        <div>::slotted()</div>
+        <div>::spelling-error</div>
+        <div>::target-text</div>
+        <details class="dedetail">
+          <summary class="summy">::-view-...</summary>
+        <div>::view-transition</div>
+        <div>::view-transition-group</div>
+        <div>::view-transition-image-pair</div>
+        <div>::view-transition-new</div>
+        <div>::view-transition-old</div>
+        </details>
+      </div>
+    </details>
+  </section>
+
+  <div class="table rbp";
+    style="grid-template-columns: repeat(4, 25em);
+    grid-template-rows: repeat(5, minmax(50px, auto));">
+
+    <div><b data-en="Example Input HTML" data-th="ตัวอย่าง HTML">Example Input HTML</b></div>
+    <div><b data-en="Structure CSS" data-th="โครงสร้างของ CSS">Structure CSS</b></div>
+    <div><b data-en="Example Input CSS" data-th="ตัวอย่าง CSS">Example Input CSS</b></div>
+    <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+    <div><pre><code class="language-html">&lt;div class="text-one"&gt;Text one&lt;/div&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class)::<b>before</b> { property : value; }</code></pre></div>
+    <div><pre><code class="language-css">.text-one::<b>before</b> { content : " * "; }</code></pre></div>
+    <div><div class="text-one">Text one</div></div>
+
+    <div><pre><code class="language-html">&lt;div class="text-two"&gt;Text two&lt;/div&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class)::<b>after</b> { property : value; }</code></pre></div>
+    <div><pre><code class="language-css">.text-two::<b>after</b> { content : " * "; }</code></pre></div>
+    <div><div class="text-two">Text two</div></div>
+  
+    <div class="codebr">
+<pre><code class="language-html">&lt;input name="text" type="text"
+class="plahol" placeholder="Placeholder"&gt;</code></pre></div>
+    <div><pre><code class="language-css">.(Class)::<b>placeholder</b> { property : value; }</code></pre></div>
+    <div><pre><code class="language-css">.plahol::<b>placeholder</b> { color : blue }</code></pre></div>
+    <div><input style="width: 75%" name="text" type="text" class="plahol" placeholder="Placeholder"></div>
+  
+    <div class="codebr">
+<pre><code class="language-html">&lt;ul class="star-list"&gt;<br>
+  &lt;li&gt;Item 1&lt;/li&gt;<br>
+  &lt;li&gt;Item 2&lt;/li&gt;<br>
+  &lt;li&gt;Item 3&lt;/li&gt;<br>
+&lt;/ul&gt;</code></pre>
+    </div>
+    <div class="codebr">
+<pre><code class="language-css">.(Class) li::<b>marker</b> { property : value; }
+.(Class) ul::<b>marker</b> { property : value; }
+.(Class) ol::<b>marker</b> { property : value; }</code></pre>
+    </div>
+    <div><pre><code class="language-css">.star-list li::<b>marker</b> { content: " ★ "; }</code></pre></div>
+    <div>
+      <ul class="star-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+
+    <div class="codebr">
+<pre><code class="language-html">&lt;p class="scroll"&gt;
+  Lorem ipsum dolor sit amet, 
+  consectetur adipiscing elit, 
+  sed do eiusmod tempor incididunt 
+  ut labore et dolore magna aliqua...
+&lt;/p&gt;</code></pre>
+    </div>
+
+  <div class="codebr">
+<pre><code class="language-css">.(Class)::<b>-webkit-scrollbar</b> { 
+  property : value 
+}<br>
+.(Class)::<b>-webkit-scrollbar-thumb</b> { 
+  property : value 
+}</code></pre>
+  </div>
+    <div class="codebr">
+<pre><code class="language-css">.scroll::<b>-webkit-scrollbar</b> {<br>
+  background: darkslategrey;
+  width: 10px; 
+}
+.scroll::<b>-webkit-scrollbar-thumb</b> {
+  background: cyan; 
+}</code></pre>
+    </div>
+    <div>
+      <p class="scroll">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+  <!-- text-style -->
+  <section>
+  <div class="red-block">
+    <h1 id="text styles">Text Styles</h1>
+    <div class="table rbnor lihi"
+    style="grid-template-columns: 20em 30em 15em;
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+    <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+    <div><b data-en="Example Value" data-th="ตัวอย่าง">Example Value</b></div>
+    <div class="exouts"><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+    <div class="codebr">
+<pre><code class="language-css"><b>color</b>: (color name)<br>
+<b>color</b>: (color code)<br>
+<b>color</b>: (color rgb)<br>
+<b>color</b>: (color rgba)<br></code></pre>
+    </div>
+    <div class="codebr">
+<pre><code class="language-css"><b>color</b>: yellow<br>
+<b>color</b>: #ffff00<br>
+<b>color</b>: rgb(255, 255, 0)<br>
+<b>color</b>: rgba(255, 255, 0, 0.5)</code></pre>
+    </div>
+    <div>
+      <p style="color: yellow" data-en="Name" data-th="ชื่อสี">Name</p>
+      <p style="color: #ffff00" data-en="Code" data-th="โค้ดสี">Code</p>
+      <p style="color: rgb(255, 255, 0)">RGB</p>
+      <p style="color: rgba(255, 255, 0, 0.5)" data-en="RGBA (+Opacity)" data-th="RGBA (+ความโปร่งแสง)">RGBA (+Opacity)</p>
+    </div>
+
+    <div><pre><code class="language-css"><b>background-color</b>: (color)</code></pre></div>
+    <div><pre><code class="language-css"><b>background-color</b>: blue</code></pre></div>
+    <div><p style="background-color: blue; width: 75%" data-en="Background Color" data-th="สีพื้นหลัง">Background Color</p></div>
+
+    <div><pre><code class="language-css"><b>font-family</b>: (font name)</code></pre></div>
+    <div><pre><code class="language-css"><b>font-family</b>: Courier New</code></pre></div>
+    <div><p style="font-family: Courier New">Courier New</p></div>
+    
+    <div><pre><code class="language-css"><b>font-size</b>: (font size)</code></pre></div>
+    <div class="codebr">
+<pre><code class="language-css"><b>font-size</b>: 1.5em<br>
+<b>font-size</b>: 150%<br>
+<b>font-size</b>: 24px<br>
+<b>font-size</b>: x-large</code></pre>
+    </div>
+    <div>
+      <p style="font-size: 1.5em" data-en="font 1.5em" data-th="ฟอนต์ 1.5em"></p>
+      <p style="font-size: 150%" data-en="font 150%" data-th="ฟอนต์ 150%"></p>
+      <p style="font-size: 24px" data-en="font 24px" data-th="ฟอนต์ 24px"></p>
+      <p style="font-size: x-large" data-en="font x-large" data-th="ฟอนต์ x-large"></p>
+    </div>
+
+    <div><pre><code class="language-css"><b>font-weight</b>: (font weight)</code></pre></div>
+    <div class="codebr">
+<pre><code class="language-css"><b>font-weight</b>: 700<br>
+<b>font-weight</b>: bold</code></pre>
+    </div>
+    <div>
+      <p style="font-weight: 700 " data-en="weight 700" data-th="ความหนา 700"></p>
+      <p style="font-weight: bold" data-en="weight bold" data-th="ความหนา bold"</p>
+    </div>
+
+    <div><pre><code class="language-css"><b>font-style</b>: (font style)</code></pre></div>
+    <div><pre><code class="language-css"><b>font-style</b>: italic</code></pre></div>
+    <div><p style="font-style: italic" data-en="italic" data-th="สไตล์ฟอนต์">italic</p></div>
+
+    <div><pre><code class="language-css"><b>text-align</b>: (text align)</code></pre></div>
+    <div class="codebr">
+<pre><code class="language-css"><b>text-align</b>: left<br>
+<b>text-align</b>: start<br>
+<b>text-align</b>: right<br>
+<b>text-align</b>: end<br>
+<b>text-align</b>: center</code></pre>
+    </div>
+    <div>
+      <p style="text-align: left" data-en="align" data-th="จัดเรียง">align</p>
+      <p style="text-align: start" data-en="align" data-th="จัดเรียง">align</p>
+      <p style="text-align: right" data-en="align" data-th="จัดเรียง">align</p>
+      <p style="text-align: end" data-en="align" data-th="จัดเรียง">align</p>
+      <p style="text-align: center" data-en="align" data-th="จัดเรียง">align</p>
+    </div>
+
+    <div><pre><code class="language-css"><b>text-decoration</b>: (decoration)</code></pre></div>
+    <div class="codebr">
+<pre><code class="language-css"><b>text-decoration</b>: underline<br>
+<b>text-decoration</b>: line-through<br>
+<b>text-decoration</b>: none<br>
+<b>text-decoration</b>: dashed underline<br>
+<b>text-decoration</b>: wavy line-through</code></pre>
+    </div>
+    <div>
+      <p style="text-decoration:underline" data-en="decoration" data-th="ตกแต่งตัวอักษร"></p>
+      <p style="text-decoration:line-through" data-en="decoration" data-th="ตกแต่งตัวอักษร"></p>
+      <p style="text-decoration:none" data-en="decoration" data-th="ตกแต่งตัวอักษร"></p>
+      <p style="text-decoration:dashed underline" data-en="decoration" data-th="ตกแต่งตัวอักษร"></p>
+      <p style="text-decoration:wavy line-through" data-en="decoration" data-th="ตกแต่งตัวอักษร"></p>
+    </div>
+
+    <div>
+      <pre><code class="language-css"><b>white-space</b>: nowrap</code></pre>
+      <div style="line-height: 2em;" data-en="(without line breaks)" data-th="(ไม่ขึ้นบรรทัดใหม่)"></div>
+    </div>
+    <div><p style="white-space:nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p></div>
+    <div></div>
+
+    <div><pre><code class="language-css"><b>line-height</b>: (line height)</code></pre></div>
+    <div><pre><code class="language-css"><b>line-height</b>: 0.8em</code></pre></div>
+    <div><p style="line-height: 0.8em">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+
+    <div><pre><code class="language-css"><b>list-style-type</b>: (style type)</code></pre></div>
+    <div><pre><code class="language-css"><b>list-style-type</b>: thai</code></pre></div>
+    <div>
+      <ul style="list-style-type:thai; line-height: normal">
+        <li data-en="Item 1" data-th="รายการที่ 1"></li>
+        <li data-en="Item 2" data-th="รายการที่ 2"></li>
+        <li data-en="Item 3" data-th="รายการที่ 3"></li>
+        <li data-en="Item 4" data-th="รายการที่ 4"></li>
+        <li data-en="Item 5" data-th="รายการที่ 5"></li>
+      </ul>
+    <div>
+
+    
+    </div>
+    </div>
+  </section>
+
+  <!-- box model -->
+  <div class="white-block">
+    <h1 id="box model">Box Model</h1>
+    <div class="table rbpnor lihi";
+      style="grid-template-columns: max-content max-content 15em;
+      grid-template-rows: repeat(5, minmax(50px, auto));">
+
+      <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+      <div><b data-en="Example Value" data-th="ตัวอย่าง">Example Value</b></div>
+      <div class="exouts"><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+      <div><pre><code class="language-css"><b>border</b>: (thickness) (style) (color)</code></pre></div>
+      <div><pre><code class="language-css"><b>border</b>: 5px solid purple</code></pre></div>
+      <div>
+        <p style="border: solid 5px purple; width: 75%" data-en="border 1" data-th="ขอบ 1">border 1<p>
+        <p style="border: solid 5px purple; width: 75%" data-en="border 2" data-th="ขอบ 2">border 2<p>
+        <p style="border: solid 5px purple; width: 75%" data-en="border 3" data-th="ขอบ 3">border 3<p>
+      </div>
+
+      <div><pre><code class="language-css"><b>outline</b>: (thickness) (style) (color)</code></pre></div>
+      <div><pre><code class="language-css"><b>outline</b>: 5px solid red</code></pre></div>
+      <div>
+        <p style="outline: solid 5px red; width: 75%" data-en="outline 1" data-th="เส้นรอบนอก 1">outline 1<p>
+        <p style="outline: solid 5px red; width: 75%" data-en="outline 2" data-th="เส้นรอบนอก 2">outline 2<p>
+        <p style="outline: solid 5px red; width: 75%" data-en="outline 3" data-th="เส้นรอบนอก 3">outline 3<p>
+        </div>
+
+      <div><pre><code class="language-css"><b>margin</b>: (width)</code></pre></div>
+      <div><pre><code class="language-css"><b>margin</b>: 2em</code></pre></div>
+      <div>
+        <p style="margin: 2em" data-en="text 1(with margin)" data-th="ข้อความ 1(มีขอบนอก)"></p>
+        <p data-en="text 2(no margin)" data-th="ข้อความ 2(ไม่มีขอบนอก)"></p>
+        <p data-en="text 3(no margin)" data-th="ข้อความ 3(ไม่มีขอบนอก)"></p>
+      </div>
+
+      <div><pre><code class="language-css"><b>padding</b>: (width)</code></pre></div>
+      <div><pre><code class="language-css"><b>padding</b>: 1em</code></pre></div>
+      <div>
+        <p style="width:160px; padding: 1em; background-color: yellow" data-en="box 1(with padding)" data-th="กล่อง 1(มีขอบใน)">box 1(with padding)</p>
+        <p style="width:160px; background-color: yellow" data-en="box 2(no padding)" data-th="กล่อง 2(ไม่มีขอบใน)">box 2(no padding)</p>
+      </div>
+
+      <div class="boco"><pre><code class="language-css"><b>border-collapse</b>: (format)</code></pre></div>
+      <div class="boco"><pre><code class="language-css"><b>border-collapse</b>: separate</code></pre></div>
+      <div class="boco">
+        <table class="sep-tab">
+          <tbody>
+            <tr>
+              <td>Sep 1</td>
+              <td>Sep 2</td>
+              <td>Sep 3</td>
+            </tr>
+            <tr>
+              <td>Sep 4</td>
+              <td>Sep 5</td>
+              <td>Sep 6</td>
+            </tr>
+            <tr>
+              <td>Sep 7</td>
+              <td>Sep 8</td>
+              <td>Sep 9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div></div>
+      <div><pre><code class="language-css"><b>border-collapse</b>: collapse</code></pre></div>
+      <div>
+        <table class="col-tab">
+          <tbody>
+            <tr>
+              <td>Col 1</td>
+              <td>Col 2</td>
+              <td>Col 3</td>
+            </tr>
+            <tr>
+              <td>Col 4</td>
+              <td>Col 5</td>
+              <td>Col 6</td>
+            </tr>
+            <tr>
+              <td>Col 7</td>
+              <td>Col 8</td>
+              <td>Col 9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div><pre><code class="language-css"><b>border-radius</b>: (radius)</code></pre></div>
+      <div class="codebr">
+<pre><code class="language-css"><b>border-radius</b>: 1em<br>
+<b>border-radius</b>: 9999px<br>
+<b>border-radius</b>: 50%</code></pre>
+      </div>
+      <div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 0.5em; margin-bottom: 1em" data-en="radius" data-th="ขอบมน"></div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 9999px; margin-bottom: 1em" data-en="full radius" data-th="ขอบมนสุด"></div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; border-radius: 50%;" data-en="eclipse" data-th="วงรี"></div>
+      </div>
+
+      <div><pre><code class="language-css"><b>box-shadow</b>: (x) (y) (blur) (color)</code></pre></div>
+      <div><pre><code class="language-css"><b>box-shadow</b>: 5px 5px 5px rgb(0, 0, 0, 0.5)</code></pre></div>
+      <div>
+        <div style="width: 75%; padding: 1em; background-color: lightgreen; box-shadow: 5px 5px 5px rgb(00,00,00,0.5)" data-en="shadow" data-th="เงา"></div>
+      </div>
+
+      <div><pre><code class="language-css"><b>overflow</b>: (value)</code></pre></div>
+      <div><pre><code class="language-css"><b>overflow</b>: auto</code></pre></div>
+      <div>
+        <section>
+          <p class="overflow">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">(property): <b>linear-gradient</b>(to [position], [color], [color])
+(property): <b>radial-gradient</b>([circle or ellipse], [color], [color])
+(property): <b>conic-gradient</b>(from [deg], [color], [color])</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">background: <b>linear-gradient</b><br>(to right, red, blue)<br>
+background: <b>radial-gradient</b><br>(circle, red, blue)<br>
+background: <b>conic-gradient</b><br>(from 45deg, red, blue, yellow)</code></pre>
+      </div>
+      <div style="line-height: normal;">
+        <div style="color: white; background: linear-gradient(to right, red, blue)" data-en="linear gradient" data-th="ไล่สีตามเส้น">linear</div>
+        <div style="margin-top: 1em; color: white; background: radial-gradient(circle, red, blue)"data-en="radial gradient" data-th="ไล่สีตามรัศมี">radial</div>
+        <div style="margin-top: 1em; color: white; background: conic-gradient(from 45deg, red, blue, yellow)" data-en="conic gradient" data-th="ไล่สีตามวงกลม(กรวย)">conic</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">background: (gradient);
+<b>background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent</b></code></pre>
+      </div>
+      
+      <div class="codebr">
+<pre><code class="language-css">background: linear-gradient(to right, red, blue);<br>
+<b>background-clip: text;<br>
+-webkit-background-clip: text;<br>
+-webkit-text-fill-color: transparent;</b></code></pre>
+      </div>
+      <div class="grte">
+        <b data-en="gradient text" data-th="ข้อความไล่สี">gradient text</b>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- inline &block -->
+  <div class="red-block">
+    <h1 id="inline block">Inline and block</h1>
+
+    <div class="table-ib">
+      <div>
+        <section style="max-width: 25em;">
+          <h3>Inline Elements</h3>
+          <section style="line-height: 2em;">
+            <pre><code class="language-html">&lt;a&gt;</code></pre> <pre><code class="language-html">&lt;abbr&gt;</code></pre> <pre><code class="language-html">&lt;b&gt;</code></pre> <pre><code class="language-html">&lt;br&gt;</code></pre> <pre><code class="language-html">&lt;button&gt;</code></pre> <pre><code class="language-html">&lt;code&gt;</code></pre> <pre><code class="language-html">&lt;em&gt;</code></pre> <pre><code class="language-html">&lt;i&gt;</code></pre> <pre><code class="language-html">&lt;img&gt;</code></pre> <pre><code class="language-html">&lt;input&gt;</code></pre> <pre><code class="language-html">&lt;kbd&gt;</code></pre>
+            <pre><code class="language-html">&lt;label&gt;</code></pre> <pre><code class="language-html">&lt;samp&gt;</code></pre> <pre><code class="language-html">&lt;select&gt;</code></pre> <pre><code class="language-html">&lt;span&gt;</code></pre> <pre><code class="language-html">&lt;strong&gt;</code></pre> <pre><code class="language-html">&lt;sub&gt;</code></pre> <pre><code class="language-html">&lt;sup&gt;</code></pre> <pre><code class="language-html">&lt;textarea&gt;</code></pre>
+          </section>
+        </section>
+      </div>
+      <div>
+        <section style="max-width: 25em;">
+          <h3>Block Elements</h3>
+          <section style="line-height: 2em;">
+            <pre><code class="language-html">&lt;blockquote&gt;</code></pre> <pre><code class="language-html">&lt;div&gt;</code></pre> <pre><code class="language-html">&lt;footer&gt;</code></pre> <pre><code class="language-html">&lt;form&gt;</code></pre> <pre><code class="language-html">&lt;h1&gt;-&lt;h6&gt;</code></pre> <pre><code class="language-html">&lt;header&gt;</code></pre> <pre><code class="language-html">&lt;hr&gt;</code></pre> <pre><code class="language-html">&lt;li&gt;</code></pre> <pre><code class="language-html">&lt;main&gt;</code></pre> <pre><code class="language-html">&lt;ol&gt;</code></pre> <pre><code class="language-html">&lt;p&gt;</code></pre> <pre><code class="language-html">&lt;section&gt;</code></pre> <pre><code class="language-html">&lt;table&gt;</code></pre> <pre><code class="language-html">&lt;tfoot&gt;</code></pre> <pre><code class="language-html">&lt;ul&gt;</code></pre>
+          </section>
+        </section>
+      </div>
+
+      <div  class="table-ibdo">
+        <div class="codebr">
+            <h3 data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</h3>
+<pre><code class="language-html">&lt;p&gt;inline 1&lt;/p&gt;
+&lt;p&gt;inline 2&lt;/p&gt;
+&lt;p&gt;inline 3&lt;/p&gt;</code></pre>
+        </div>
+        <div>
+            <h3 data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</h3>
+            <p style="line-height: 0.8em;">inline 1</p>
+            <p style="line-height: 0.8em;">inline 2</p>
+            <p style="line-height: 0.8em;">inline 3</p>
+        </div>
+      </div>
+      <div  class="table-ibdo">
+        <div class="codebr">
+            <h3 data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</h3>
+<pre><code class="language-html">&lt;span&gt;block 1&lt;/span&gt;<br>
+&lt;span&gt;block 2&lt;/span&gt;<br>
+&lt;span&gt;block 3&lt;/span&gt;</code></pre>
+        </div>
+        <div>
+            <h3 data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</h3>
+            <span style="line-height: 0.8em;">block 1</span>
+            <span style="line-height: 0.8em;">block 2</span>
+            <span style="line-height: 0.8em;">block 3</span>
+        </div>
+      </div>
+
+      <div class="table-ibdo">
+        <div style="line-height: 2em;"><pre><code class="language-css">Inline</code></pre> <span data-en="and" data-th="และ">and</span> <pre><code class="language-css">Inline-block</code></pre><br> <span data-en="will be centered if" data-th="จะถูกจัดตรงกลางถ้า">will be centered if</span><br> <pre><code class="language-css">text-align: center</code></pre></div>
+        <div><div style="text-align: center; padding-right: 2em;"><span>inline</span></div></div> 
+      </div>
+      <div class="table-ibdo">
+        <div style="line-height: 2em;"><pre><code class="language-css">Block</code></pre> <span data-en="will be centered if" data-th="จะถูกจัดตรงกลางถ้า">will be centered if</span><br>
+          <div class="codebr" style="margin-top: 0.5em;">
+            <pre><code class="language-css">width: (width)
+margin: 0 auto</code></pre>
+          </div>
+        </div>
+        <div><div style="width:60px ; margin: 0 auto; padding-right: 2em;"><p>block</p></div></div>
+      </div>
+    </div>
+
+    <h1>Inline & Inline-block</h1>
+      <div class="table-ib" style="gap: 0px"> <!--table-->
+        <div style="justify-content: center;"><h2>Inline</h2></div>
+        <div style="justify-content: center;"><h2>Inline-block</h2></div>
+
+        
+        <div style="display: grid; grid-template-columns: repeat(2,250px); grid-template-rows: repeat(1,max-content)">
+            
+            <div style="margin-left: 10px"> <!--cell 1-->
+              <h3 data-en="Example Input CSS" data-th="ตัวอย่างอินพุท CSS">Example Input CSS</h3>
+              <div class="codebr">
+<pre><code class="language-css">.class {<br>
+  border: 1px solid black; 
+}<br>
+.class &gt; span {<br>
+  background-color: coral; 
+}<br></code></pre>
+              </div>
+            </div> <!--cell 1-->
+
+            <div style="margin-left: 10px"> <!--cell 2-->
+              <div>
+                <h3 data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</h3>
+                <div class="inlblo">
+                  <span>inline box 1</span>
+                  <span>inline box 2</span>
+                  <span>inline box 3</span>
+                  <span data-en="another inline box" data-th="inline box อีกตัว">another inline box</span>
+                </div>
+              </div>
+            </div> <!--cell 2-->
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2,250px); grid-template-rows: repeat(1,max-content)">
+            <div style="margin-left: 10px"> <!--cell 3-->
+              <div>
+                <h3 data-en="Example Input CSS" data-th="ตัวอย่างอินพุท CSS">Example Input CSS</h3>
+                <div class="codebr">
+<pre><code class="language-css">.class {<br>
+  border: 1px solid black 
+}<br>
+.class &gt; span {<br>
+  display: inline-block;</b><br>
+  background-color: coral; 
+}<br></code></pre>
+                </div>
+              </div>
+            </div> <!--cell 3-->
+
+            <div style="margin-left: 10px"> <!--cell 4-->
+              <div>
+                <h3 data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</h3>
+                <div class="inlbloblo">
+                  <span>inline box 1</span>
+                  <span>inline box 2</span>
+                  <span>inline box 3</span>
+                  <span data-en="another inline box" data-th="inline box อีกตัว">another inline box</span>
+                </div>
+              </div>
+            </div> <!--cell 4-->
+
+        </div>
+
+      </div> <!--table-->
+    </div>
+
+  <!-- image and background -->
+  <div class="white-block">
+    <h1 id="image and background">Image and Background</h1>
+    
+    <div class="imba"> <!--imba-->
+      <div>
+        <img src="orange-cat.jpg" width="200" height="200">
+        <p data-en="(no filter)" data-th="(ไม่มีฟิลเตอร์)">(no filter)</p>
+      </div>
+      <div>
+        <img style="filter: blur(3px)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>blur(px)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: brightness(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>brightness(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: contrast(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>contrast(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: grayscale(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>grayscale(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: hue-rotate(90deg)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>hue-rotate(deg)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: invert(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>invert(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: opacity(50%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>opacity(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: saturate(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>saturate(%)</b></code></pre></p>
+      </div>
+      <div>
+        <img style="filter: sepia(150%)" src="orange-cat.jpg" width="200" height="200">
+        <p><pre><code class="language-css">filter: <b>sepia(%)</b></code></pre></p>
+      </div>
+      <div>
+        <div class="scenery1"><div class="whsq1"></div></div>
+        <p data-en="(normal filter)" data-th="(ฟิลเตอร์ปกติ)">(normal filter)</p>
+      </div>
+      <div>
+        <div class="scenery1"><div class="whsq2"></div></div>
+        <p><pre><code class="language-css"><b>backdrop-filter</b>: (filter)</code></pre></p>
+      </div>
+    </div> <!--imba-->
+    <div style="margin-top: 2em;" class="table-obfi"> <!--ibp 2-->
+      <!-- object-fit-->
+      <div>
+        <div>
+          <b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b><br>
+          <div class="codebr">
+            <pre><code class="language-css">width: 200px;
+height: 400px;</code></pre>
+          </div>
+        </div>
+        <br>
+        <div>
+          <b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b><br>
+          <img style="width:200px; height:400px" src="city.jpg">
+        </div>
+      </div>
+      <div>
+        <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b><br>
+          <div class="codebr">
+            <pre><code class="language-css">width: 200px;
+height: 400px;
+object-fit: cover;</code></pre>
+<div style="line-height: 1em;" data-en="(Make the image cover without being stretched.)" data-th="(ทำให้รูปภาพครอบคลุมโดยไม่ถูกบี้)"></div><br>
+          </div>
+        </div>
+        <div>
+          <b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b><br>
+          <img style="width:200px; height:400px; object-fit: cover" src="city.jpg">
+        </div>
+      </div>
+      <!-- pattern bg -->
+      <div>
+        <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b><br>
+          <div class="codebr">
+<pre><code class="language-css">background-image: url('bubble-pattern.png');<br>
+overflow: auto;<br>
+height: 15em;<br>
+width: 75%;<br>
+color: white;<br>
+padding: 1em;<br></code></pre>
+          </div>
+          <br>
+        <b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b>
+        <div class="pattern1">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+      </div>
+      <div>
+        <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b><br>
+          <div class="codebr">
+<pre><code class="language-css">background-image: url('bubble-pattern.png');<br>
+overflow: auto;<br>
+height: 15em;<br>
+width: 75%;<br>
+color: white;<br>
+padding: 1em;<br>
+<b style="white-space: nowrap">background-attachment: local;</b></code></pre>
+<div style="line-height: 1em;" data-en="(Make the pattern scroll with the scrollbar.)" data-th="(ทำให้แพทเทิร์นเลื่อนตาม scrollbar)"></div><br>
+          </div>
+        <b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b>
+        <div class="pattern2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div> <!--pattern bg-->
+  </div>
+  </div>
+</div>
+
+<div>
+  <!--flexbox-->
+  <div class="red-block">
+    <h1 id="flexbox">Flexbox</h1>
+    <div class="table rbnor"
+    style="grid-template-columns: repeat(3,20em);
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+      <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+      <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b></div>
+      <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+      <div><pre><code class="language-css">display: flex</code></pre></div>
+      <div><pre><code class="language-css">display: flex</code></pre></div>
+      <div class="flex">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>justify-content</b>: (position)<br></code></pre>
+<div data-en="(justify in horizontal)" data-th="(จัดเรียงในแนวนอน)"></div>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>justify-content</b>: center</code></pre>
+      </div>
+      <div class="flex" style="justify-content: center">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>  
+
+      <div class="codebr">
+<pre><code class="language-css">display: flex
+<b>align-items</b>: (position)</code></pre><br>
+<div data-en="(align in vertical)" data-th="(จัดเรียงในแนวตั้ง)"></div>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>align-items</b>: center</code></pre>
+      </div>
+      <div class="flex" style="align-items: center">
+        <div>flex 1</div>
+        <div style="background: blue; height: 5em; width: 3em;"></div>
+        <div>flex 3</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>gap</b>: (size)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>gap</b>: 10px</code></pre>
+      </div>
+      <div class="flex" style="gap: 10px">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div style="grid-row: span 2" class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>flex-wrap</b>: (wrap or nowrap)</code></pre>
+      </div>
+      <div style="border: none" class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>flex-wrap</b>: wrap</code></pre>
+      </div>
+      <div class="flex" style="border: none; flex-wrap: wrap">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+        <div>flex 4</div>
+        <div>flex 5</div>
+        <div>flex 6</div>
+        <div>flex 7</div>
+        <div>flex 8</div>
+        <div>flex 9</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>flex-wrap</b>: nowrap</code></pre>
+      </div>
+      <div class="flex" style="flex-wrap: nowrap">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+        <div>flex 4</div>
+        <div>flex 5</div>
+        <div>flex 6</div>
+        <div>flex 7</div>
+        <div>flex 8</div>
+        <div>flex 9</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>flex-direction</b>: (column or row)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: flex<br>
+<b>flex-direction</b>: column</code></pre>
+      </div>
+      <div class="flex" style="flex-direction: column">
+        <div>flex 1</div>
+        <div>flex 2</div>
+        <div>flex 3</div>
+      </div>
+
+      <div><pre><code class="language-css"><b>flex-basis</b>: (width)</code></pre></div>
+      <div><pre><code class="language-css"><b>flex-basis</b>: 20px</code></pre></div>
+      <div class="flex">
+        <div style="flex-basis: 20px">flex 1</div>
+        <div style="flex-basis: 20px">flex 2</div>
+        <div style="flex-basis: 20px">flex 3</div>
+      </div>
+
+      <div><pre><code class="language-css"><b>flex-grow</b>: (width)</code></pre></div>
+      <div class="codebr">
+<pre><code class="language-css"><b>flex-grow</b>: 3<br>
+<b>flex-grow</b>: 1<br>
+<b>flex-grow</b>: 3</code></pre>
+      </div>
+      <div class="flex">
+        <div style="flex-grow: 3">flex 1</div>
+        <div style="flex-grow: 1">flex 2</div>
+        <div style="flex-grow: 3">flex 3</div>
+      </div>
+
+      <div><pre><code class="language-css"><b>flex-shrink</b>: (width)</code></pre></div>
+      <div>
+      <pre><code class="language-css"><b>flex-shrink</b>: 2<br></code></pre><br><br>
+      <div data-en="(in flex 1)" data-th="(ใน flex 1)"></div>
+      </div>
+      <div class="flex" style="width: 400px">
+        <div style="flex-basis: 150px; flex-shrink: 2">flex 1</div>
+        <div style=" flex-basis: 150px">flex 2</div>
+        <div style=" flex-basis: 150px">flex 3</div>
+        <div style=" flex-basis: 150px">flex 4</div>
+        <div style=" flex-basis: 150px">flex 5</div>
+        <div style=" flex-basis: 150px">flex 6</div>
+        <div style=" flex-basis: 150px">flex 7</div>
+        <div style=" flex-basis: 150px">flex 8</div>
+        <div style=" flex-basis: 150px">flex 9</div> 
+      </div>
+
+    </div>
+  </div>
+
+  <!-- grid -->
+  <div class="white-block">
+    <h1 id="grid">Grid</h1>
+    <div class="table rbpnor"
+    style="grid-template-columns: 25em 25em 15em;
+    grid-template-rows: repeat(2, minmax(50px, auto));">
+
+      <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+      <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b></div>
+      <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+      <div><pre><code class="language-css">display: grid</code></pre></div>
+      <div><pre><code class="language-css">display: grid</code></pre></div>
+      <div class="grid">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: grid<br>
+<b>grid-template-columns</b>: (column width)<br>
+<b>grid-template-rows</b>: (row width)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: grid
+<b>grid-template-columns</b>: 10em 10em 10em
+<b>grid-template-rows</b>: 2em 5em</code></pre>
+        <div style="margin-bottom: 15px;" data-en="or" data-th="หรือ">or</div>
+<pre><code class="language-css">display: grid
+<b>grid-template-columns</b>: repeat(3, 10em)
+<b>grid-template-rows</b>: 2em 5em</code></pre>
+      </div>
+      <div class="grid" style="grid-template-columns: 10em 10em 10em; grid-template-rows: 2em 5em">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css">display: grid<br>
+<b>gap</b>: (size)<br></code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">display: grid<br>
+<b>gap</b>: 10px<br></code></pre>
+      </div>
+      <div class="grid" style="gap: 10px">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>grid-column</b>: span (number)<br>
+<b>grid-row</b>: span (number)</code></pre>
+        <div data-en="(column span in horizontal)" data-th="(ขยายแถวแนวนอน)"></div>
+        <div data-en="(row span in vertical)" data-th="(ขยายแถวแนวตั้ง)"></div>
+      </div>
+      <div>
+        <pre><code class="language-css"><b>grid-column</b>: span 2</code></pre> <section style="line-height: 2em;" data-en="(in grid 1)" data-th="(ใน grid 1)"></section>
+        <pre><code class="language-css"><b>grid-row</b>: span 2</code></pre> <section style="line-height: 2em;" data-en="(in grid 4)" data-th="(ใน grid 4)"></section>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(3,auto); grid-template-rows: repeat(3, auto);">
+        <div style="grid-column: span 2">grid 1</div>
+        <div>grid 3</div>
+        <div style="grid-row: span 2">grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+        <div>grid 8</div>
+        <div>grid 9</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>justify-items</b>: (position)<br>
+<b>align-items</b>: (position)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>justify-items</b>: center<br>
+<b>align-items</b>: center</code></pre>
+      </div>
+      <div class="grid"
+      style="
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 50px);
+        justify-items: center;
+        align-items: center;
+      ">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>justify-content</b>: (position)<br>
+<b>align-content</b>: (position)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>justify-content</b>: center<br>
+<b>align-content</b>: center</code></pre>
+      </div>
+      <div class="grid"
+      style="
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 50px);
+        justify-content: center;
+        align-content: center;
+      ">
+        <div>grid 1</div>
+        <div>grid 2</div>
+        <div>grid 3</div>
+        <div>grid 4</div>
+        <div>grid 5</div>
+        <div>grid 6</div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>grid-auto-columns</b>: (column width)<br>
+<b>grid-auto-rows</b>: (row width)<br></code></pre>
+<div data-en="(specify and lock the size of columns/rows)" data-th="(กําหนดและล็อคขนาดของคอลัมน์/แถว)"></div>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>grid-auto-columns</b>: 50px<br>
+<b>grid-auto-rows</b>: 50px<br></code></pre>
+      </div>
+      <div data-en="The example cannot be displayed clearly." data-th="ไม่สามารถแสดงตัวอย่างได้อย่างชัดเจน"></div>
+
+  </div>
+  </div>
+
+  <!-- column -->
+    <div class="red-block">
+      <h1 id="column">Column</h1>
+      <div class="table rb" style="grid-template-columns: repeat(2, 25em); grid-template-rows: repeat(2, max-content);">
+
+        <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+        <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b></div>
+
+        <div class="codebr">
+<pre><code class="language-css"><b>column-count</b>: (number)<br>
+<b>column-width</b>: (width)<br>
+<b>column-gap</b>: (size)<br>
+<b>column-rule</b>: (thickness) (style) (color)</code></pre>
+        </div>
+        <div class="codebr">
+<pre><code class="language-css"><b>column-count</b>: 3;<br>
+<b>column-width</b>: 150px;<br>
+<b>column-gap</b>: 20px;<br>
+<b>column-rule</b>: 3px dashed indigo;</code></pre>
+        </div>
+
+        <div style="border-bottom: 1px solid white; grid-column: span 2" data-en="Example Output" data-th="ตัวอย่างเอาท์พุท"><b>Example Output</b></div>
+
+        <div style="grid-column: span 2">
+          <div class="column-c">
+            <p>
+              Lorem ipsum odor amet, consectetuer adipiscing elit. Dignissim risus nisi neque inceptos diam tellus. Est vitae accumsan blandit vel ligula varius leo turpis? Diam senectus per cursus vulputate hendrerit nam accumsan. Arcu in posuere nam per ultrices, curabitur habitasse dui. Aliquet auctor non potenti taciti sociosqu pharetra litora. Interdum inceptos aptent, ad dictum cursus vivamus viverra tempus!
+            </p>
+            <p>
+              Nisl ultricies quis etiam ridiculus tristique ac suscipit adipiscing. Erat phasellus primis ut ad vehicula ante sit orci eget! Sollicitudin vel class quam elementum lorem ac. Placerat vehicula hac maximus netus sollicitudin eu nam. Etiam felis mus elementum pretium tellus dapibus adipiscing. Suspendisse consequat class libero finibus sem; hac conubia volutpat. Nibh mattis praesent molestie class scelerisque venenatis ac gravida. Volutpat fermentum dis arcu cursus metus posuere pulvinar. Dis vulputate tincidunt sapien sit ullamcorper condimentum.
+            </p>
+            <p>
+              Mi at libero adipiscing mauris litora venenatis vulputate lacus enim. Morbi elementum taciti litora, elit id aptent et. Tempor litora nulla arcu maximus; lobortis eget mauris. Libero sit ridiculus amet hendrerit vivamus morbi turpis fusce. Dolor morbi taciti lacinia sem fringilla. Adipiscing congue cubilia class fames erat laoreet auctor fusce. Ipsum in fermentum felis felis finibus. Consequat gravida imperdiet platea nisi lacinia quisque.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!--position-->
+  <div class="white-block">
+    <h1 id="position">Position</h1>
+    <div class="table rbpnor" style="grid-template-columns: repeat(2, 25em) max-content; grid-template-rows: repeat(auto, max-content);">
+
+      <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+      <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b></div>
+      <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+      
+      <div>
+        <pre><code class="language-css"><b>position</b>: static</code></pre>
+        <div style="line-height: 2em;" data-en="(default)" data-th="(ค่าเริ่มต้น)">(default)</div>
+      </div>
+      <div>
+        <pre><code class="language-css"><b>position</b>: static<br></code></pre>
+      </div>
+      <div class="pos">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div>
+        <pre><code class="language-css"><b>margin</b>: (width)<br></code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>margin</b>-left: 10px<br>
+<b>margin</b>-top: 10px</code></pre>
+      </div>
+      <div class="pos">
+        <div></div>
+        <div style="margin-left: 10px; margin-top: 10px"></div>
+        <div></div>
+      </div>
+
+      <div>
+        <pre><code class="language-css"><b>position: relative</b>; (position): (width)</code></pre>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>position: relative</b>; left: 10px<br>
+<b>position: relative</b>; top: 10px</code></pre>
+      </div>
+      <div class="pos">
+        <div></div>
+        <div style="position: relative; left: 10px; top: 10px;"></div>
+        <div></div>
+      </div>
+
+      <div>
+        <pre><code class="language-css"><b>position: absolute</b>; (position): (width)</code></pre>
+        <div style="line-height: 2.5em;"><span data-en="(the parent should have" data-th="(parent ของตัวนั้นควรมี"></span> <pre><code class="language-css"><b>position: relative;</b></code></pre>)</div>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>position: absolute</b>; left: 10px<br>
+<b>position: absolute</b>; top: 10px</code></pre>
+      </div>
+      <div class="pos" style="position: relative">
+        <div></div>
+        <div style="position: absolute; left: 10px; top: 10px;"></div>
+        <div></div>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>position: sticky<br>
+position: (scale)</b></code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>position: sticky<br>
+top: 0</b></code></pre>
+      </div>
+      <div class="stick" style="padding: 0px">
+        <div>Group 1</div>
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+        <div>Group 2</div>
+        <p>Item 4</p>
+        <p>Item 5</p>
+        <p>Item 6</p>
+        <div>Group 3</div>
+        <p>Item 7</p>
+        <p>Item 8</p>
+        <p>Item 9</p>
+        <div>Group 4</div>
+        <p>Item 10</p>
+        <p>Item 11</p>
+        <p>Item 12</p>
+      </div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>position: fixed;<br>
+inset: (top right bottom left);</b></code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css"><b>position: fixed;<br>
+inset: 0 0 auto 0;</b></code></pre>
+      </div>
+      <div data-en="(on the top of the screen)" data-th="(อยู่ข้างบนสุดของหน้าจอเว็บไซต์)"></div>
+
+    </div>
+  </div>
+
+  <!-- transition and transform -->
+  <div class="red-block">
+    <h1 id="transition and transform"> Transition and Transform</h1>
+    <div class="table rbnor" style="grid-template-columns: repeat(3,max-content); grid-template-rows: repeat(2, max-content);">
+
+      <div><b data-en="Structure" data-th="โครงสร้าง">Structure</b></div>
+      <div><b data-en="Example Input" data-th="ตัวอย่างอินพุท">Example Input</b></div>
+      <div><b data-en="Example Output" data-th="ตัวอย่างเอาท์พุท">Example Output</b></div>
+
+      <div class="codebr">
+<pre><code class="language-css"><b>transition</b>: (porperty duration function delay)<br>
+<b>transform</b>: specific property(value)
+<b>(porperty)</b>: (value)</code></pre>
+      </div>
+      <div class="codebr">
+<pre><code class="language-css">.transfo {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  transition: transform 3s ease 0.5s, 
+  background-color 3s ease 0.5s;
+}
+.transfo:hover {
+  transform: rotate(360deg) scale(1.5);
+  background-color: lightcoral;
+}</code></pre>
+      </div>
+      <div>
+        <div class="transfo"></div>
+      </div>
+
+    </div>
+
+    <h1 data-en="Specific porperties" data-th="Porperties เฉพาะ">Specific porperties</h1>
+    <div class="table rbnor" style="gap: 0; grid-template-columns: auto auto; grid-template-rows: repeat(auto, max-content);">
+      
+      <div><pre><code class="language-css">translate(x,y)</code></pre></div>
+      <div data-th="ย้ายตำแหน่ง element" data-en="moves an element"></div>
+      <div><pre><code class="language-css">rotate(deg)</code></pre></div>
+      <div data-th="หมุน element" data-en="rotates an element"></div>
+      <div><pre><code class="language-css">scale(x,y)</code></pre></div>
+      <div data-th="ปรับขนาด element" data-en="resizes an element"></div>
+      <div><pre><code class="language-css">skew(x,y)</code></pre></div>
+      <div data-th="บิดเบือน element" data-en="distorts an element"></div>
+      <div><pre><code class="language-css">matrix()</code></pre></div>
+      <div style="border-bottom: 1px solid white" data-th="รวมการแปลง 2d หลายๆ แบบ" data-en="combines multiple 2d transformations"></div>
+      <div><pre><code class="language-css">matrix3d()</code></pre></div>
+      <div data-th="แปลงในรูปแบบ 3D" data-en="transforms in 3D"></div>
+    </div>
+  </div>
+
+  <!-- animation -->
+  <div class="white-block">
+    <h1 id="animation">Animation</h1>
+  
+    <h2><pre><code class="language-css">animation: (properties)</code></pre></h2>
+    <h1>Properties</h1>
+    <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
+
+      <div style="grid-column: span 2;"><pre><code class="language-css"><b>animation-name: (@keyframes name)</b></code></pre></div>
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)" class="codebr">
+<pre><code class="language-css">@keyframes (animation-name) {<br>
+  0% { property : value; }<br>
+  50% { property : value; }<br>
+  100% { property : value; }<br>
+}</code></pre>
+      </div>
+
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css"><b>animation-duration: (time)</b></code></pre></div>
+      <div style="grid-column: span 2;"><pre><code class="language-css"><b>animation-timing-function: (function)</b></code></pre></div>
+      <div>linear</div>
+      <div data-th="เคลื่อนที่ด้วยความเร็วคงที่" data-en="moves at a constant speed"></div>
+      
+      <div><details class="dropdown">
+      <summary class="dropdown-button">ease / ease-in-out</summary>
+        <div class="dropdown-content">
+          <div style="display: grid; grid-template-columns: 100px max-content;">
+            <div><b>ease-in</b></div>
+            <div data-th="เริ่มช้า → เร่งความเร็วที่ปลาย" data-en="starts slow → speeds up at the end"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 100px max-content;">
+            <div><b>ease-out</b></div>
+            <div data-th="เริ่มเร็ว → ช้าลงที่ปลาย" data-en="starts fast → slows down at the end"></div>
+          </div>
+        </div>
+      </details></div>
+      <div data-th="เริ่มช้า → เร่งความเร็วกลาง → ช้าลงที่ปลาย" data-en="starts slow → speeds up in the middle → slows down at the end"></div>
+
+      <!-- detail -->
+      <div>steps( number,
+        <details class="dropdown">
+        <summary class="dropdown-button">jump</summary>
+          <div class="dropdown-content">
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>start</b></div>
+              <div data-th="กระโดดที่เริ่มต้นของแต่ละขั้นตอน" data-en="jumps at the start of each step"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>end</b></div>
+              <div data-th="กระโดดที่ปลายของแต่ละขั้นตอน" data-en="jumps at the end of each step"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>jump-none</b></div>
+              <div data-th="กระโดดอย่างสม่ำเสมอภายในขั้นตอน" data-en="jump evenly within the steps"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px max-content;">
+              <div><b>jump-both</b></div>
+              <div data-th="กระโดดที่ทั้งเริ่มต้นและปลาย" data-en="jumps at both the start and the end"></div>
+            </div>
+            
+          </div>
+        </details>
+
+      )</div>
+      <div data-th="เคลื่อนที่ใน [number] ขั้นตอน, ไม่ลื่นไหล" data-en="moves in [number] steps, not smooth"></div>
+      <!-- detail -->
+
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">cubic-bezier(x1, y1, x2, y2)</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)"data-th="กำหนดรูปร่างการเคลื่อนไหวด้วยจุดควบคุม" data-en="customizes the motion curve using control points"></div>
+
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css">animation-delay: (time)</code></pre></div>
+      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css">animation-iteration-count: (number)</code></pre></div>
+      <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-direction: (direction)</b></code></pre></div>
+      <div>normal</div>
+      <div data-th="เล่นตามปกติ จากเริ่มต้นไปยังจุดสิ้นสุด" data-en="(plays forward, from start to end)"></div>
+      <div>reverse</div>
+      <div data-th="เล่นย้อนกลับ จากจุดสิ้นสุดไปยังจุดเริ่มต้น" data-en="(plays backward, from end to start)"></div>
+      <div>alternate</div>
+      <div data-th="เล่นตามทิศทางปกติ แล้วสลับไปเล่นย้อนกลับ" data-en="(plays normal direction, then reverse)"></div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">alternate-reverse</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)" data-th="เล่นย้อนกลับ แล้วกลับไปเล่นตามทิศทางปกติ" data-en="(plays reverse direction, then normal)"></div>
+
+      
+      <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-fill-mode: (mode)</b></code></pre></div>
+      <div>none</div>
+      <div data-th="ไม่มีผลต่อสถานะของ element หลังจากที่มันสิ้นสุด" data-en="(no effect on the element’s state after it ends)"></div>
+      <div>forwards</div>
+      <div data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อเริ่มการทำงาน" data-en="(the element returns to initial state when started)"></div>
+      <div>backwards</div>
+      <div data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อสิ้นสุดการทำงาน" data-en="(the element returns to initial state when ended)"></div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)">both</div>
+      <div style="border-bottom: 1px solid rgb(255, 50, 200)" data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อเริ่มและเมื่อสิ้นสุดการทำงาน" data-en="(the element returns to initial state when started and ended)"></div>
+      
+      <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-play-state: (paused or running)</b></code></pre></div>
+
+    </div>
+    </div>
+      
+  <!-- Media Query -->
+  <div class="red-block">
+    <h1 id="media query">Media Query</h1">
+    <h2 class="codebr">
+<pre><code class="language-css">@media (min or max-width: px) {
+  .class { property : value; }
+}</code></pre>
+    </h2>
+
+    <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
+      <div style="border-bottom: 1px white solid;" data-en="Device" data-th="อุปกรณ์"><b>Device</b></div>
+      <div style="border-bottom: 1px white solid;" data-en="Width" data-th="ความกว้าง"><b>Width</b></div>
+
+      <div data-en="Phone" data-th="โทรศัพท์">phone</div>
+      <div><pre><code class="language-css">@media (max-width: 767px)</code></pre></div>
+
+      <div data-en="Tablet / Ipad" data-th="แท็บเล็ต / ไอแพด">tablet / ipad</div>
+      <div><pre><code class="language-css">@media (min-width: 768px) and (max-width: 1024px)</code></pre></div>
+
+      <div data-en="Desktop" data-th="เดสก์ท็อป">desktop</div>
+      <div><pre><code class="language-css">@media (min-width: 1025px)</code></pre></div>
+
+      <div data-en="in portriat" data-th="หน้าจอแนวตั้ง">in portriat</div>
+      <div><pre><code class="language-css">(orientation: portrait)</code></pre></div>
+
+      <div data-en="in landscape" data-th="หน้าจอแนวนอน">in landscape</div>
+      <div><pre><code class="language-css">(orientation: landscape)</code></pre></div>
+
+      <div data-en="dark theme" data-th="ธีมมืด(ปรับอัตโนมัติตามเครื่อง)">dark theme</div>
+      <div><pre><code class="language-css">(prefers-color-scheme: dark)</code></pre></div>
+
+      <div data-en="light theme" data-th="ธีมสว่าง(ปรับอัตโนมัติตามเครื่อง)">light theme</div>
+      <div><pre><code class="language-css">(prefers-color-scheme: light)</code></pre></div>
+
+    </div>
+  </div>
+</div>
+
+</section>
+<div class="navi" data-en="navigation bar" data-th="แถบนำทาง"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="script.js" defer></script>
+
+<section class="buttons">
+  <!-- languagebtn -->
+  <div>
+    <select class="sectionbtn" id="option" name="option" onchange="changeLanguage(this.value)">
+      <option value="en">ENG</option>
+      <option value="th">ไทย</option>
+    </select>
+  </div>
+
+    <!-- light theme -->
+    <div>
+      <button class="themebtn" id="theme-toggle">
+        <img class="themeicon" id="theme-icon" src="moon-icon.png" alt="Theme Icon" width="25" height="25">
+      </button>
+    </div>
+
+    <!-- ฺgo to top btn -->
+    <div>
+      <button class="gotop">
+      <img src="up-icon.png" width="25" height="25" class="uppy">
+      </button>
+    </div>
+
+</section>
+
+</body>
+</html>
