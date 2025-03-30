@@ -6,9 +6,63 @@ h1 {
   margin-top: 25px;
   margin-bottom:25px;
 }
+.header {
+  display:flex;
+  flex-wrap: nowrap;
+  background: #00000080;
+  height: max-content;
+  color: white;
+  padding: 2em;
+  justify-content: start;
+  align-items: center;
+  gap: 2.5em;
+}
+.home {
+  flex-grow: 1;
+  text-align:end;
+}
+.home > a{
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  transition: font-weight 0.5s ease, font-size 0.5s ease;
+}
+.home > a > button {
+  cursor: pointer;
+  color: white;
+  background: #00000080;
+  border-radius: 15px;
+  border: 1px solid black;
+  width: 5em;
+  font-size: 20px;
+  font-family: Kanit;
+  transition: background 1s ease, box-shadow 1s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.home > a > button:hover {
+  background: black;
+  box-shadow: 0 0 5px rgba(0,0,0, 1);
+}
+.footer {
+  background: #00000080;
+  height: max-content;
+  color: white;
+  padding: 1.5em;
+  text-align:start;
+  width: 100%;
+  position: relative;
+  bottom : 0;
+  left: 0;
+  box-sizing: border-box;
+  margin-top:auto;
+  z-index: -1;
+}
+body{
+  background:#4C0033;
+  margin:0;
+}
 .web {
   margin:25px; 
-  background-color: #4C0033;
 }
 .struc {
   overflow-x: auto;
@@ -564,7 +618,7 @@ summary:hover {
   flex-wrap: nowrap;
   gap: 5px;
   position: fixed;
-  inset: auto 25px 25px auto;
+  inset: auto 15px 15px auto;
 }
 /* buttons */
 
@@ -643,7 +697,7 @@ select.sectionbtn option {
   background-color: rgba(0,0,0,0.5);
   backdrop-filter: blur(5px);
   border: solid 1px black;
-  box-shadow:0 0 5px rgba(27, 26, 85,0.5);
+  box-shadow:0 0 5px rgba(175, 1, 113, 0.5);
   transition: background-color 1s ease, color 1s ease, box-shadow 1s ease;
 }
 .themebtn:hover {
@@ -676,6 +730,17 @@ select.sectionbtn option {
   }
   .unv , .unv1 {
     width: 3em;
+  }
+  .header > div > h1 {
+    font-size: 36px !important;
+  }
+  .header > div > img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .header {
+    gap: 1.5em;
+    height: 3em;
   }
 }
 
@@ -809,4 +874,24 @@ body.light .unv1-header,body.light .unv-header {
   background: linear-gradient(to right, #ff2eb6, #ff36a4);
 }
 
+body.light .header, body.light .footer {
+  background: #ffffff80;
+  color: #13364e;
+}
+body.light .home>a {
+  color: #13364e;
+}
+body.light .home > a{
+  color: #13364e;
+}
+body.light .home > a > button {
+  color: #13364e;
+  background: #ffffff80;
+  border: 1px solid white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+body.light .home > a > button:hover {
+  background: white;
+  box-shadow: 0 0 5px rgba(255,255,255, 1);
+}
 /* lightth */
