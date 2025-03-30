@@ -16,6 +16,8 @@ h1 {
   justify-content: start;
   align-items: center;
   gap: 2.5em;
+  position: relative;
+  z-index: 1;
 }
 .home {
   flex-grow: 1;
@@ -491,7 +493,7 @@ body{
 }
 .navi {
   position: fixed;
-  z-index: 3;
+  z-index: 0;
   inset: 0 0 auto;
   background-color: crimson;
   color: white;
@@ -757,7 +759,7 @@ select.sectionbtn option {
 }
 
 /* darkth */
-.web.dark {
+body.dark {
   background-color: #4C0033;
 }
 body.dark .summy {
@@ -766,7 +768,7 @@ body.dark .summy {
 /* darkth */
 
 /* lightth */
-.web.light {
+body.light {
   background-color: #ffbbe0;
 }
 body.light .title-box {
