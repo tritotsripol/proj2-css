@@ -18,6 +18,7 @@ h1 {
   gap: 2.5em;
   position: relative;
   z-index: 1;
+  backdrop-filter: blur(30px);
 }
 .home {
   flex-grow: 1;
@@ -102,9 +103,6 @@ body{
   padding-bottom: 3em;
   border-radius: 25px;
   margin-bottom: 1em;
-  background-image: url('pinky-pattern-01.png');
-  background-size: auto 750px;
-  background-repeat: repeat;
 } 
 .contents-box {
   background: linear-gradient(to bottom,rgb(255, 235, 252),rgb(255, 200, 225));
@@ -214,33 +212,32 @@ body{
 
 .table {
   display: grid;
-  gap: 10px;
 }
 .table > div{
-  padding: 1em;
+  padding: 0.5em;
 }
 .rb > div:not(:nth-last-child(-n+4)) {
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px #ffffff80;
   padding-bottom: 1em;
 }
 .rbp > div:not(:nth-last-child(-n+4)) {
-  border-bottom: solid 1px #E80F88;
+  border-bottom: solid 1px #E80F8880;
   padding-bottom: 1em;
 }
 .rbnor > div:not(:nth-last-child(-n+3)) {
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px #ffffff80;
   padding-bottom: 1em;
 }
 .rbpnor > div:not(:nth-last-child(-n+3)):not(.boco) {
-  border-bottom: solid 1px #E80F88;
+  border-bottom: solid 1px #E80F8880;
   padding-bottom: 1em;
 }
 .rbib > div:not(:nth-last-child(-n+2)) {
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px #ffffff80;
   padding-bottom: 1em;
 }
 .rbibp > div:not(:nth-last-child(-n+2)) {
-  border-bottom: solid 1px #E80F88;
+  border-bottom: solid 1px #E80F8880;
   padding-bottom: 1em;
 }
 .table-ib {
@@ -254,7 +251,7 @@ body{
   grid-template-columns: auto auto;
 }
 .table-ib > div:not(:nth-child(2n)) {
-  border-right: solid 1px white;
+  border-right: solid 1px #ffffff80;
 }
 .table-ibp {
   display: grid;
@@ -267,10 +264,10 @@ body{
   grid-template-columns: auto auto;
 }
 .table-ibp > div:not(:nth-child(2n)) {
-  border-right: solid 1px #E80F88;
+  border-right: solid 1px #E80F8880;
 }
 .table-obfi > div:not(:nth-child(4n)) {
-  border-right: solid 1px #E80F88;
+  border-right: solid 1px #E80F8880;
 }
 .table-obfi {
   display:grid; 
@@ -609,6 +606,7 @@ summary:hover {
 .summy {
   color: white; font-weight: 400
 }
+
 
 /*--------------
     buttons
