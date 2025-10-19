@@ -74,6 +74,7 @@ body{
 .struc::-webkit-scrollbar {
   background: rgba(0,0,0, 0.5);
   border-radius: 25px;
+  height: 10px;
 }
 .struc::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.5);
@@ -774,22 +775,22 @@ body.light .title-box {
 }
 body.light .contents-box {
   background: linear-gradient(to bottom, #ffffff, #ffdff0);
-  color: #ff2eb6;
+  color: #ec4899;
 }
 body.light .contents > div > a {
-  color: #ff2eb6;
+  color: #ec4899;
 }
 body.light .contents > div > a:hover {
-  color: #c3007e;
+  color: #d946a6;
 }
 
-body.light .red-block {
-  background: linear-gradient(to bottom, #ff2eb6, #ff36a4);
+body.light .red-block, body.light .title-box {
+  background: linear-gradient(to bottom, #ec4899, #d946a6);
   color: white;
 }
 body.light .red-block:hover {
   transform: scale(1.01);
-  box-shadow: 0px 0px 20px #ff2eb680;
+  box-shadow: 0px 0px 20px #ec489980;
 }
 body.light .white-block:hover {
   transform: scale(1.01);
@@ -797,13 +798,13 @@ body.light .white-block:hover {
 }
 body.light .white-block {
   background: linear-gradient(to bottom, #ffffff, #ffdff0);
-  color: #ff2eb6;
+  color: #ec4899;
 }
 body.light .white-block::-webkit-scrollbar-thumb {
   background: linear-gradient(
     to right,
-    #ff2eb6bf,
-    #ff36a4bf
+    #ec4899bf,
+    #d946a6bf
   );
 }
 
@@ -811,13 +812,13 @@ body.light::-webkit-scrollbar {
   background: rgba(255,255,255, 0.5);
 }
 body.light::-webkit-scrollbar-thumb {
-  background: #ff2eb680;
+  background: #ec489980;
 }
 
 body.light .gotop, body.light .themebtn {
   background-color: rgba(255,255,255,0.5);
   border: solid 1px white;
-  box-shadow:0 0 5px #ff2eb680;
+  box-shadow:0 0 5px #ec489980;
   transition: background-color 1s ease, box-shadow 1s ease;
 }
 body.light .gotop:hover, body.light .themebtn:hover {
@@ -831,7 +832,7 @@ body.light .uppy, body.light .themeicon {
 body.light .sectionbtn {
   background-color: rgba(255,255,255,0.5);
   border: solid 1px white;
-  box-shadow:0 0 5px #ff2eb680;
+  box-shadow:0 0 5px #ec489980;
   transition: background-color 1s ease, color 1s ease, box-shadow 1s ease;
 }
 body.light .sectionbtn:hover {
@@ -856,22 +857,22 @@ body.light .dropdown-content {
 }
 /* แสดง dropdown-content เมื่อ details ถูกเปิด */
 body.light details[open] .dropdown-content {
-  box-shadow: 0px 0px 20px #ff2eb680;
-  color: black;
+  box-shadow: 0px 0px 20px #ec489980;
+  color: #722457;
 }
 body.light summary {
-  color: #ff2eb6;
+  color: #722457;
 }
 body.light .unv ,body.light .unv1,body.light .unvright {
   background: white;
-  color: black;
-  box-shadow: 0px 0px 5px #ff2eb680;
+  color: #722457;
+  box-shadow: 0px 0px 5px #ec489980;
 }
 body.light .summy {
-  color: black; font-weight: 400
+  color: #722457; font-weight: 400
 }
 body.light .unv1-header,body.light .unv-header {
-  background: linear-gradient(to right, #ff2eb6, #ff36a4);
+  background: linear-gradient(to right, #ec4899, #d946a6);
 }
 
 body.light .header, body.light .footer {
