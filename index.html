@@ -1714,15 +1714,15 @@ inset: 0 0 auto 0;</b></code></pre>
     <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
 
       <div style="grid-column: span 2;"><pre><code class="language-css"><b>animation-name: (@keyframes name)</b></code></pre></div>
-      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)" class="codebr">
-<pre><code class="language-css">@keyframes (animation-name) {<br>
+      <div style="grid-column: span 2;" class="tableanime" class="codebr">
+<pre style="display:block"><code class="language-css">@keyframes (animation-name) {<br>
   0% { property : value; }<br>
   50% { property : value; }<br>
   100% { property : value; }<br>
 }</code></pre>
       </div>
 
-      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css"><b>animation-duration: (time)</b></code></pre></div>
+      <div style="grid-column: span 2;" class="tableanime"><pre><code class="language-css"><b>animation-duration: (time)</b></code></pre></div>
       <div style="grid-column: span 2;"><pre><code class="language-css"><b>animation-timing-function: (function)</b></code></pre></div>
       <div>linear</div>
       <div data-th="เคลื่อนที่ด้วยความเร็วคงที่" data-en="moves at a constant speed"></div>
@@ -1771,11 +1771,11 @@ inset: 0 0 auto 0;</b></code></pre>
       <div data-th="เคลื่อนที่ใน [number] ขั้นตอน, ไม่ลื่นไหล" data-en="moves in [number] steps, not smooth"></div>
       <!-- detail -->
 
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)">cubic-bezier(x1, y1, x2, y2)</div>
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)"data-th="กำหนดรูปร่างการเคลื่อนไหวด้วยจุดควบคุม" data-en="customizes the motion curve using control points"></div>
+      <div class="tableanime" >cubic-bezier(x1, y1, x2, y2)</div>
+      <div class="tableanime" data-th="กำหนดรูปร่างการเคลื่อนไหวด้วยจุดควบคุม" data-en="customizes the motion curve using control points"></div>
 
-      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css">animation-delay: (time)</code></pre></div>
-      <div style="grid-column: span 2; border-bottom: 1px solid rgb(255, 50, 200)"><pre><code class="language-css">animation-iteration-count: (number)</code></pre></div>
+      <div style="grid-column: span 2;" class="tableanime"><pre><code class="language-css">animation-delay: (time)</code></pre></div>
+      <div style="grid-column: span 2;" class="tableanime"><pre><code class="language-css">animation-iteration-count: (number)</code></pre></div>
       <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-direction: (direction)</b></code></pre></div>
       <div>normal</div>
       <div data-th="เล่นตามปกติ จากเริ่มต้นไปยังจุดสิ้นสุด" data-en="(plays forward, from start to end)"></div>
@@ -1783,8 +1783,8 @@ inset: 0 0 auto 0;</b></code></pre>
       <div data-th="เล่นย้อนกลับ จากจุดสิ้นสุดไปยังจุดเริ่มต้น" data-en="(plays backward, from end to start)"></div>
       <div>alternate</div>
       <div data-th="เล่นตามทิศทางปกติ แล้วสลับไปเล่นย้อนกลับ" data-en="(plays normal direction, then reverse)"></div>
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)">alternate-reverse</div>
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)" data-th="เล่นย้อนกลับ แล้วกลับไปเล่นตามทิศทางปกติ" data-en="(plays reverse direction, then normal)"></div>
+      <div class="tableanime" >alternate-reverse</div>
+      <div class="tableanime"  data-th="เล่นย้อนกลับ แล้วกลับไปเล่นตามทิศทางปกติ" data-en="(plays reverse direction, then normal)"></div>
 
       
       <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-fill-mode: (mode)</b></code></pre></div>
@@ -1794,8 +1794,8 @@ inset: 0 0 auto 0;</b></code></pre>
       <div data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อเริ่มการทำงาน" data-en="(the element returns to initial state when started)"></div>
       <div>backwards</div>
       <div data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อสิ้นสุดการทำงาน" data-en="(the element returns to initial state when ended)"></div>
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)">both</div>
-      <div style="border-bottom: 1px solid rgb(255, 50, 200)" data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อเริ่มและเมื่อสิ้นสุดการทำงาน" data-en="(the element returns to initial state when started and ended)"></div>
+      <div class="tableanime" >both</div>
+      <div class="tableanime"  data-th="element จะกลับสู่สถานะเริ่มต้นเมื่อเริ่มและเมื่อสิ้นสุดการทำงาน" data-en="(the element returns to initial state when started and ended)"></div>
       
       <div style="grid-column: span 2"><pre><code class="language-css"><b>animation-play-state: (paused or running)</b></code></pre></div>
 
@@ -1812,8 +1812,8 @@ inset: 0 0 auto 0;</b></code></pre>
     </h2>
 
     <div class="table" style="gap: 0px; grid-template-columns: repeat(2,max-content); grid-template-rows: repeat(auto, max-content);">
-      <div style="border-bottom: 1px white solid;" data-en="Device" data-th="อุปกรณ์"><b>Device</b></div>
-      <div style="border-bottom: 1px white solid;" data-en="Width" data-th="ความกว้าง"><b>Width</b></div>
+      <div class="tableanime" data-en="Device" data-th="อุปกรณ์"><b>Device</b></div>
+      <div class="tableanime" data-en="Width" data-th="ความกว้าง"><b>Width</b></div>
 
       <div data-en="Phone" data-th="โทรศัพท์">phone</div>
       <div><pre><code class="language-css">@media (max-width: 767px)</code></pre></div>
